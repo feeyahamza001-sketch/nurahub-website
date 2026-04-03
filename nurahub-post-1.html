@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Postpartum Support Is the Next Frontier in Workplace Inclusion — Nura Hub</title>
+<meta name="description" content="Most organisations stop at maternity leave policy. The real work begins at return. Here's why postpartum support is not a perk — it's a retention strategy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--terracotta:#B5513A;--terracotta-dark:#8C3A25;--terracotta-light:#E8C4B5;--gold:#C4A24A;--gold-light:#E8D89A;--gold-muted:#8C7235;--cream:#FAF6F0;--cream-dark:#F0E8DC;--charcoal:#2C2926;--slate:#5C5550;--slate-light:#8C8480;--white:#FFFFFF;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--charcoal);overflow-x:hidden;}
+
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(250,246,240,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--terracotta-light);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:70px;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--terracotta-dark);text-decoration:none;}
+.nav-logo span{color:var(--gold-muted);font-style:italic;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{font-size:0.82rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--slate);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover{color:var(--terracotta);}
+.nav-cta{background:var(--terracotta);color:var(--white);padding:10px 22px;border-radius:2px;font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;}
+
+/* ARTICLE HERO */
+.article-hero{padding-top:70px;background:var(--charcoal);}
+.article-hero-inner{padding:70px 8% 0;max-width:1200px;margin:0 auto;}
+.article-breadcrumb{font-size:0.72rem;color:var(--slate-light);margin-bottom:2rem;display:flex;align-items:center;gap:8px;}
+.article-breadcrumb a{color:var(--gold);text-decoration:none;}
+.article-breadcrumb a:hover{color:var(--gold-light);}
+.breadcrumb-sep{color:var(--slate-light);}
+.article-cat{font-size:0.68rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);background:rgba(196,162,74,0.15);border:1px solid rgba(196,162,74,0.3);padding:5px 14px;display:inline-block;margin-bottom:1.5rem;}
+.article-hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,4rem);font-weight:300;color:var(--cream);line-height:1.1;max-width:820px;margin-bottom:1.5rem;}
+.article-hero-title em{font-style:italic;color:var(--terracotta-light);}
+.article-subtitle{font-size:1.1rem;font-weight:300;color:var(--slate-light);max-width:680px;line-height:1.7;margin-bottom:2.5rem;}
+.article-meta-bar{display:flex;align-items:center;gap:2rem;padding:1.5rem 0;border-top:1px solid rgba(255,255,255,0.08);flex-wrap:wrap;}
+.article-author{display:flex;align-items:center;gap:12px;}
+.author-avatar{width:44px;height:44px;border-radius:50%;background:var(--terracotta);display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:600;color:var(--cream);flex-shrink:0;}
+.author-info strong{display:block;font-size:0.9rem;font-weight:500;color:var(--cream);}
+.author-info span{font-size:0.75rem;color:var(--slate-light);}
+.meta-divider{width:1px;height:32px;background:rgba(255,255,255,0.1);}
+.meta-item{font-size:0.75rem;color:var(--slate-light);display:flex;align-items:center;gap:6px;}
+.article-hero-img{width:100%;max-height:500px;object-fit:cover;object-position:center;display:block;filter:brightness(0.7) saturate(0.85);margin-top:2rem;}
+
+/* ARTICLE LAYOUT */
+.article-layout{display:grid;grid-template-columns:1fr 300px;gap:4rem;padding:60px 8%;max-width:1200px;margin:0 auto;}
+
+/* ARTICLE CONTENT */
+.article-content{}
+.article-content p{font-size:1.05rem;font-weight:300;color:var(--slate);line-height:1.95;margin-bottom:1.6rem;}
+.article-content h2{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:400;color:var(--charcoal);margin:2.5rem 0 1rem;line-height:1.2;}
+.article-content h3{font-size:1.1rem;font-weight:500;color:var(--charcoal);margin:2rem 0 0.75rem;}
+.article-content strong{font-weight:600;color:var(--charcoal);}
+.article-content em{font-style:italic;}
+
+/* PULL QUOTE */
+.pull-quote{border-left:4px solid var(--terracotta);margin:2.5rem 0;padding:1.5rem 2rem;background:var(--white);}
+.pull-quote p{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-style:italic;font-weight:400;color:var(--charcoal);line-height:1.5;margin-bottom:0;}
+
+/* STAT BOX */
+.stat-box{background:var(--charcoal);padding:2rem;margin:2.5rem 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;}
+.stat-item{text-align:center;}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:400;color:var(--gold-light);line-height:1;}
+.stat-label{font-size:0.72rem;font-weight:300;color:var(--slate-light);margin-top:6px;line-height:1.4;}
+
+/* CALLOUT */
+.callout{background:var(--terracotta-light);border-left:4px solid var(--terracotta);padding:1.5rem 1.75rem;margin:2rem 0;}
+.callout-title{font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--terracotta);margin-bottom:0.5rem;}
+.callout p{font-size:0.9rem;color:var(--charcoal);line-height:1.7;margin-bottom:0;font-weight:400;}
+
+/* CHECKLIST BOX */
+.checklist-box{background:var(--cream-dark);padding:2rem;margin:2rem 0;border:1px solid var(--terracotta-light);}
+.checklist-box h4{font-size:0.9rem;font-weight:600;color:var(--charcoal);margin-bottom:1rem;}
+.checklist-box ul{list-style:none;}
+.checklist-box li{font-size:0.88rem;color:var(--slate);padding:6px 0;border-bottom:1px solid rgba(0,0,0,0.05);display:flex;gap:10px;line-height:1.5;}
+.checklist-box li::before{content:'□';color:var(--terracotta);font-size:0.9rem;flex-shrink:0;}
+
+/* TAGS */
+.article-tags{display:flex;gap:8px;flex-wrap:wrap;margin:2.5rem 0;padding-top:2rem;border-top:1px solid var(--cream-dark);}
+.article-tag{font-size:0.68rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--slate);border:1px solid var(--cream-dark);padding:5px 12px;}
+
+/* SHARE */
+.share-bar{display:flex;align-items:center;gap:1rem;margin:2rem 0;padding:1.5rem;background:var(--white);border:1px solid var(--cream-dark);}
+.share-label{font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--slate);margin-right:0.5rem;}
+.share-btn{font-size:0.72rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--white);background:var(--charcoal);padding:7px 16px;text-decoration:none;border:none;cursor:pointer;font-family:'Outfit',sans-serif;transition:background 0.2s;}
+.share-btn:hover{background:var(--terracotta);}
+.share-btn.twitter{background:#1DA1F2;}
+.share-btn.linkedin{background:#0077B5;}
+.share-btn.whatsapp{background:#25D366;}
+
+/* AUTHOR BIO */
+.author-bio{background:var(--white);padding:2rem;display:flex;gap:1.5rem;margin:2.5rem 0;border-left:4px solid var(--gold);}
+.author-bio-avatar{width:70px;height:70px;border-radius:50%;background:var(--terracotta);display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:600;color:var(--cream);flex-shrink:0;}
+.author-bio-content h4{font-size:0.95rem;font-weight:600;color:var(--charcoal);margin-bottom:2px;}
+.author-bio-content .bio-role{font-size:0.75rem;color:var(--gold-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;}
+.author-bio-content p{font-size:0.85rem;font-weight:300;color:var(--slate);line-height:1.7;margin-bottom:0;}
+
+/* RELATED */
+.related-section{margin-top:4rem;padding-top:2.5rem;border-top:2px solid var(--cream-dark);}
+.related-title{font-size:0.7rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--slate);margin-bottom:1.5rem;}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.related-card{background:var(--white);overflow:hidden;text-decoration:none;}
+.related-card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;filter:saturate(0.8);transition:filter 0.3s;}
+.related-card:hover img{filter:saturate(1);}
+.related-card-body{padding:1.25rem;}
+.related-card-cat{font-size:0.62rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--terracotta);margin-bottom:0.4rem;}
+.related-card-body h4{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:400;color:var(--charcoal);line-height:1.3;}
+
+/* SIDEBAR */
+.article-sidebar{}
+.as-sticky{position:sticky;top:90px;display:flex;flex-direction:column;gap:1.5rem;}
+.as-widget{background:var(--white);padding:1.5rem;border:1px solid var(--cream-dark);}
+.as-widget-title{font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--terracotta);margin-bottom:1rem;padding-bottom:0.75rem;border-bottom:2px solid var(--terracotta);}
+.toc-list{list-style:none;}
+.toc-list li{padding:5px 0;border-bottom:1px solid var(--cream-dark);}
+.toc-list li a{font-size:0.82rem;font-weight:300;color:var(--slate);text-decoration:none;line-height:1.4;display:block;}
+.toc-list li a:hover{color:var(--terracotta);}
+.toc-list li.active a{color:var(--terracotta);font-weight:500;}
+.progress-bar{height:3px;background:var(--cream-dark);margin-bottom:1rem;border-radius:2px;overflow:hidden;}
+.progress-fill{height:100%;background:var(--terracotta);width:0%;transition:width 0.2s;border-radius:2px;}
+
+.sidebar-cta{background:var(--terracotta);padding:1.75rem;}
+.sidebar-cta h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;font-style:italic;color:var(--cream);margin-bottom:0.5rem;line-height:1.3;}
+.sidebar-cta p{font-size:0.8rem;font-weight:300;color:rgba(250,246,240,0.8);margin-bottom:1.25rem;line-height:1.6;}
+.sidebar-cta a{display:block;background:var(--gold);color:var(--charcoal);text-align:center;padding:10px;font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;}
+
+.nl-widget input{width:100%;padding:9px 12px;border:1px solid var(--cream-dark);font-family:'Outfit',sans-serif;font-size:0.82rem;color:var(--charcoal);outline:none;margin-bottom:8px;}
+.nl-widget input:focus{border-color:var(--terracotta);}
+.nl-widget button{width:100%;background:var(--charcoal);color:var(--cream);border:none;padding:10px;font-family:'Outfit',sans-serif;font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
+.nl-widget button:hover{background:var(--terracotta);}
+
+/* ARTICLE CTA BANNER */
+.article-cta{background:var(--charcoal);padding:70px 8%;text-align:center;}
+.article-cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:300;color:var(--cream);margin-bottom:1rem;}
+.article-cta h2 em{color:var(--terracotta-light);font-style:italic;}
+.article-cta p{font-size:0.9rem;font-weight:300;color:var(--slate-light);max-width:480px;margin:0 auto 2rem;line-height:1.8;}
+.cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.btn-p{background:var(--terracotta);color:var(--white);padding:13px 28px;font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:background 0.2s;}
+.btn-p:hover{background:var(--terracotta-dark);}
+.btn-o{background:transparent;color:var(--gold-light);padding:13px 28px;font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border:1px solid var(--gold-muted);display:inline-block;transition:all 0.2s;}
+.btn-o:hover{background:rgba(196,162,74,0.1);}
+
+footer{background:var(--charcoal);padding:2rem 8%;}
+.footer-bar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-bar p{font-size:0.75rem;color:var(--slate-light);}
+.footer-bar a{color:var(--slate-light);text-decoration:none;font-size:0.75rem;}
+.footer-bar a:hover{color:var(--cream);}
+
+@media(max-width:900px){
+  .article-layout{grid-template-columns:1fr;gap:2rem;}
+  .article-sidebar{display:none;}
+  .stat-box{grid-template-columns:1fr;}
+  .related-grid{grid-template-columns:1fr;}
+  .nav-links,.nav-cta{display:none;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="nurahub-website.html" class="nav-logo">Nura <span>Hub</span> Limited</a>
+  <ul class="nav-links">
+    <li><a href="nurahub-website.html#about">About</a></li>
+    <li><a href="nurahub-website.html#services">Services</a></li>
+    <li><a href="nurahub-blog.html">Insights</a></li>
+    <li><a href="nurahub-products.html">Resources</a></li>
+  </ul>
+  <a href="nurahub-website.html#contact" class="nav-cta">Work With Us</a>
+</nav>
+
+<!-- ARTICLE HERO -->
+<div class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-breadcrumb">
+      <a href="nurahub-website.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="nurahub-blog.html">Insights</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Postpartum &amp; Workplace</span>
+    </div>
+    <div class="article-cat">Postpartum &amp; Workplace</div>
+    <h1 class="article-hero-title">Why Postpartum Support Is the Next Frontier<br>in <em>Workplace Inclusion</em></h1>
+    <p class="article-subtitle">Most organisations stop at maternity leave policy. The real work begins at return. Here's why postpartum support is not a perk — it's a retention strategy, a talent strategy, and a human rights issue.</p>
+    <div class="article-meta-bar">
+      <div class="article-author">
+        <div class="author-avatar">SH</div>
+        <div class="author-info">
+          <strong>Barr. Safiya Hamza Jibrin</strong>
+          <span>Founder, Nura Hub Limited</span>
+        </div>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">April 3, 2025</div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">8 min read</div>
+      <div class="meta-divider"></div>
+      <div class="meta-item" style="color:var(--gold);">4,200 reads</div>
+    </div>
+  </div>
+  <img class="article-hero-img" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1400&q=80" alt="Women in professional setting" />
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-layout">
+
+  <article class="article-content">
+
+    <p>Every week, somewhere in Nigeria, a talented, capable woman walks back through the doors of her organisation after maternity leave — and within six months, she has left. Not because she lacked ambition. Not because the work stopped mattering. But because the organisation she returned to was not designed for the person she had become.</p>
+
+    <p>This is the postpartum gap — and it is one of the most preventable talent crises in our workplaces today.</p>
+
+    <div class="stat-box">
+      <div class="stat-item">
+        <div class="stat-num">67%</div>
+        <div class="stat-label">of women report feeling less supported after returning from maternity leave than before</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">43%</div>
+        <div class="stat-label">of professional women in Nigeria who leave jobs after childbirth cite inadequate postpartum support as a key factor</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3–5x</div>
+        <div class="stat-label">the cost of replacing a senior employee compared to retaining one through postpartum support</div>
+      </div>
+    </div>
+
+    <h2 id="what-is">What Postpartum Support in the Workplace Actually Means</h2>
+
+    <p>Let's begin by separating this from maternity leave policy — because these are not the same thing, and treating them as synonymous is precisely how organisations fail returning mothers.</p>
+
+    <p><strong>Maternity leave</strong> covers the period away from work. Most Nigerian organisations have some version of this — however minimally compliant — and consider the matter closed once the employee returns.</p>
+
+    <p><strong>Postpartum workplace support</strong> covers everything that happens after return: the physical environment, the scheduling flexibility, the cultural expectations, the manager behaviours, and the emotional infrastructure that either enables a woman to thrive or quietly pushes her toward the exit.</p>
+
+    <div class="pull-quote">
+      <p>"The policy ends on the day she comes back. But the postpartum experience — the feeding, the healing, the sleep deprivation, the identity recalibration — does not. We design workplaces as if a woman should simply resume exactly where she left off. That is both biologically ignorant and organisationally counterproductive."</p>
+    </div>
+
+    <h2 id="five-elements">The Five Elements of a Postpartum-Friendly Workplace</h2>
+
+    <p>At Nura Hub, when we work with organisations on postpartum framework design, we assess five interconnected elements. These are not aspirational ideals — they are practical, implementable features that can be introduced in any Nigerian workplace regardless of size.</p>
+
+    <h3>1. Physical Environment</h3>
+    <p>A private, clean, comfortable space for expressing breast milk is not a luxury. It is a medical requirement. The absence of lactation facilities is not just inconsiderate — it is a driver of premature weaning, which is associated with infant health risks and maternal stress. A lactation space needs a door that locks, a seat, a clean surface, access to power, and proximity to a refrigerator. That is the minimum. Many organisations spend more on a single meeting room refresh.</p>
+
+    <h3>2. Scheduling Flexibility</h3>
+    <p>The first three to six months after a woman returns from maternity leave involve a biological and logistical juggle that most managers have never been trained to understand. Expressing milk every two to three hours. Navigating childcare arrangements that frequently break down. Managing health appointments — for herself and her infant. Organisations that refuse to engage with flexible scheduling for returning mothers are not being rigorous. They are being rigid at the cost of talent.</p>
+
+    <h3>3. Manager Capability</h3>
+    <p>This is the element most organisations overlook entirely. It does not matter how good your policy is if your line managers do not know how to implement it, do not believe in it, or — worse — actively undermine it. We have worked with organisations where a beautifully written postpartum policy existed on paper, and line managers were simultaneously penalising women for taking their entitled pumping breaks. Manager capability training is non-negotiable.</p>
+
+    <div class="callout">
+      <div class="callout-title">Key Insight</div>
+      <p>In our consulting work across Nigerian organisations, we consistently find that the single highest-impact intervention is not policy creation — it is manager coaching. A capable, informed, empathetic manager can compensate for policy gaps. An incapable or hostile manager will undermine even the best-written policy.</p>
+    </div>
+
+    <h3>4. Psychological Safety</h3>
+    <p>A returning mother must feel safe to acknowledge her realities — the hard days, the adjustment, the moments when the competing demands of work and new motherhood feel impossible to balance. Organisations with poor psychological safety cultures force women to perform capability they may not yet fully have, which leads to invisible strain, burnout, and eventual departure.</p>
+
+    <h3>5. A Structured Reintegration Plan</h3>
+    <p>Return from maternity leave should not be an event. It should be a process. At Nura Hub, we recommend a minimum 90-day reintegration plan that includes a re-onboarding conversation, revised workload expectations for the first month, a designated check-in with HR at 30, 60, and 90 days, and an explicit discussion about medium-term career development. The signal this sends — that the organisation sees her long-term value — is itself a retention mechanism.</p>
+
+    <h2 id="business-case">The Business Case: Why This Is About Revenue, Not Just Kindness</h2>
+
+    <p>If the moral argument alone were sufficient, Nigerian organisations would already be leading the world in postpartum workplace support. So let us speak the language that tends to move boards and CFOs.</p>
+
+    <p>The cost of replacing a mid-level professional in Nigeria ranges from 50% to 200% of their annual salary when you account for recruitment, onboarding, lost productivity, and knowledge transfer. A senior professional is at the higher end. When organisations lose three, five, or ten talented women per year to preventable postpartum attrition, the financial cost is significant — and almost entirely invisible, because it is rarely tracked.</p>
+
+    <p>Conversely, organisations that invest in postpartum support consistently report higher retention rates among post-maternity staff, stronger employer brand and talent attraction, reduced recruitment costs, and — crucially — stronger loyalty and performance from the retained women themselves. Retention is a revenue strategy.</p>
+
+    <div class="checklist-box">
+      <h4>Quick Self-Assessment: Does Your Organisation Have These Basics?</h4>
+      <ul>
+        <li>A designated, private lactation space with a lock and power access</li>
+        <li>A written postpartum leave and return-to-work policy</li>
+        <li>Flexibility provisions for the first 3–6 months post-return</li>
+        <li>Manager training on postpartum support and legal obligations</li>
+        <li>A structured 90-day reintegration plan for returning mothers</li>
+        <li>A grievance mechanism for postpartum-related workplace issues</li>
+        <li>Mental health access provisions (EAP or equivalent)</li>
+        <li>Regular HR check-ins at 30, 60, and 90 days post-return</li>
+      </ul>
+    </div>
+
+    <h2 id="nigeria-context">The Nigerian Context: What Makes This Both Harder and More Urgent</h2>
+
+    <p>Nigeria sits at a specific intersection of challenges. Cultural expectations around motherhood and femininity are strong, and in many organisations, a woman's pregnancy or motherhood is — consciously or not — treated as a reduction in her seriousness or commitment. This is compounded by the fact that postpartum mental health challenges, including postpartum depression and anxiety, remain heavily stigmatised and largely unaddressed in Nigerian workplaces.</p>
+
+    <p>At the same time, Nigeria's growing professional class includes an increasing number of highly educated, highly skilled women whose departure from the workforce represents not just a personal cost, but a national economic and development loss. The organisations that figure out postpartum support now will have a structural talent advantage that compounds over time.</p>
+
+    <h2 id="what-to-do">Where to Begin: A Practical Starting Point</h2>
+
+    <p>The full implementation of a postpartum-friendly workplace framework takes time and investment. But there are things you can begin this week — without a budget, without a consultant, and without executive sign-off on a major initiative.</p>
+
+    <p>Start with a conversation. Ask your HR team: what is our current postpartum return experience? Ask a manager: what do you do when a new mother returns to your team? Ask a recently returned employee (with care and respect): what would have made your return easier?</p>
+
+    <p>The answers will tell you exactly where your gaps are. And from there, the work of filling them can begin — with policy, with training, with environment design, or with any combination of the five elements above.</p>
+
+    <p>At Nura Hub, we offer a postpartum workplace assessment as part of our Foundation and Growth packages. We also provide the Postpartum-Friendly Workplace Design Toolkit as a standalone resource for HR teams who want to build this capacity internally. The link is below.</p>
+
+    <p>The frontier of workplace inclusion is not where it was five years ago. It has moved. It now includes the hours after return from leave — the days and weeks and months when talent retention or talent loss is actually being decided. The organisations that understand this, and act on it, will lead. Those that don't will continue to wonder why their best women keep leaving.</p>
+
+    <!-- TAGS -->
+    <div class="article-tags">
+      <span class="article-tag">Postpartum</span>
+      <span class="article-tag">Workplace Inclusion</span>
+      <span class="article-tag">Women's Rights</span>
+      <span class="article-tag">HR Policy</span>
+      <span class="article-tag">Nigeria</span>
+      <span class="article-tag">Talent Retention</span>
+    </div>
+
+    <!-- SHARE -->
+    <div class="share-bar">
+      <span class="share-label">Share:</span>
+      <a class="share-btn twitter" href="https://twitter.com/intent/tweet?text=Why+Postpartum+Support+Is+the+Next+Frontier+in+Workplace+Inclusion&url=#" target="_blank">Twitter/X</a>
+      <a class="share-btn linkedin" href="#" target="_blank">LinkedIn</a>
+      <a class="share-btn whatsapp" href="https://wa.me/?text=Read+this+article+from+Nura+Hub+Limited" target="_blank">WhatsApp</a>
+    </div>
+
+    <!-- AUTHOR BIO -->
+    <div class="author-bio">
+      <div class="author-bio-avatar">SH</div>
+      <div class="author-bio-content">
+        <h4>Barr. Safiya Hamza Jibrin</h4>
+        <div class="bio-role">Founder · Nura Hub Limited</div>
+        <p>Legal practitioner, gender equity consultant, and author of <em>Becoming a Woman in Power</em>. Safiya founded Nura Hub Limited to close the gap between gender policy and organisational practice across Nigeria.</p>
+      </div>
+    </div>
+
+    <!-- RELATED POSTS -->
+    <div class="related-section">
+      <div class="related-title">Continue Reading</div>
+      <div class="related-grid">
+        <a href="#" class="related-card">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=500&q=80" alt="Policy" />
+          <div class="related-card-body">
+            <div class="related-card-cat">Policy &amp; Law</div>
+            <h4>From Policy Paper to Organizational Reality: Closing the Implementation Gap</h4>
+          </div>
+        </a>
+        <a href="#" class="related-card">
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=500&q=80" alt="Leadership" />
+          <div class="related-card-body">
+            <div class="related-card-cat">Women's Leadership</div>
+            <h4>What Does It Actually Mean to "Become a Woman in Power"?</h4>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="article-sidebar">
+    <div class="as-sticky">
+
+      <!-- PROGRESS + TOC -->
+      <div class="as-widget">
+        <div class="progress-bar"><div class="progress-fill" id="readProgress"></div></div>
+        <div class="as-widget-title">In This Article</div>
+        <ul class="toc-list">
+          <li><a href="#what-is">What postpartum support means</a></li>
+          <li><a href="#five-elements">The five essential elements</a></li>
+          <li><a href="#business-case">The business case for it</a></li>
+          <li><a href="#nigeria-context">The Nigerian context</a></li>
+          <li><a href="#what-to-do">Where to begin</a></li>
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div class="sidebar-cta">
+        <h3>Download Our Free Postpartum HR Guide</h3>
+        <p>A one-page quick guide for HR managers on the five non-negotiables before a mother returns.</p>
+        <a href="nurahub-products.html">Get Free Guide →</a>
+      </div>
+
+      <!-- NEWSLETTER -->
+      <div class="as-widget nl-widget">
+        <div class="as-widget-title">Weekly Insights</div>
+        <p style="font-size:0.82rem;color:var(--slate);margin-bottom:1rem;line-height:1.6;">Gender equity insights every Tuesday.</p>
+        <input type="email" placeholder="your@email.com" />
+        <button type="button">Subscribe Free</button>
+      </div>
+
+      <!-- CONSULTING CTA -->
+      <div class="as-widget" style="background:var(--cream-dark);border:none;">
+        <div class="as-widget-title">Need Implementation Help?</div>
+        <p style="font-size:0.82rem;color:var(--slate);line-height:1.7;margin-bottom:1rem;">We design postpartum workplace frameworks as part of our Growth and Transformation packages.</p>
+        <a href="nurahub-website.html#packages" style="display:block;background:var(--charcoal);color:var(--cream);text-align:center;padding:10px;font-size:0.75rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='var(--terracotta)'" onmouseout="this.style.background='var(--charcoal)'">See Packages →</a>
+      </div>
+
+    </div>
+  </aside>
+
+</div>
+
+<!-- ARTICLE CTA -->
+<div class="article-cta">
+  <h2>Ready to Build a <em>Postpartum-Friendly</em> Workplace?</h2>
+  <p>We help organisations design the frameworks, train the managers, and create the systems that retain talented women after maternity leave.</p>
+  <div class="cta-row">
+    <a href="nurahub-website.html#contact" class="btn-p">Let's Talk</a>
+    <a href="nurahub-products.html" class="btn-o">Download Free Tools</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bar">
+    <p>© 2025 Nura Hub Limited · <a href="nurahub-blog.html">Back to Insights</a></p>
+    <div style="display:flex;gap:1.5rem;">
+      <a href="nurahub-website.html" style="color:var(--slate-light);text-decoration:none;font-size:0.75rem;">Home</a>
+      <a href="nurahub-products.html" style="color:var(--slate-light);text-decoration:none;font-size:0.75rem;">Resources</a>
+      <a href="nurahub-website.html#contact" style="color:var(--slate-light);text-decoration:none;font-size:0.75rem;">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  const article = document.querySelector('.article-content');
+  const rect = article.getBoundingClientRect();
+  const total = article.offsetHeight;
+  const scrolled = Math.max(0, -rect.top);
+  const progress = Math.min(100, (scrolled / total) * 100);
+  document.getElementById('readProgress').style.width = progress + '%';
+});
+</script>
+</body>
+</html>

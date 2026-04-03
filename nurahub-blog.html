@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insights & Journal — Nura Hub Limited</title>
+<meta name="description" content="Gender equity insights, workplace inclusion guides, and women's leadership articles from Nura Hub Limited.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --terracotta: #B5513A; --terracotta-dark: #8C3A25; --terracotta-light: #E8C4B5;
+  --gold: #C4A24A; --gold-light: #E8D89A; --gold-muted: #8C7235;
+  --cream: #FAF6F0; --cream-dark: #F0E8DC; --charcoal: #2C2926;
+  --slate: #5C5550; --slate-light: #8C8480; --white: #FFFFFF;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--charcoal);overflow-x:hidden;}
+
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(250,246,240,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--terracotta-light);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:70px;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--terracotta-dark);letter-spacing:0.02em;text-decoration:none;}
+.nav-logo span{color:var(--gold-muted);font-style:italic;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{font-size:0.82rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--slate);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--terracotta);}
+.nav-cta{background:var(--terracotta);color:var(--white);padding:10px 22px;border-radius:2px;font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;}
+.nav-cta:hover{background:var(--terracotta-dark);}
+
+/* PAGE HERO */
+.page-hero{padding:140px 8% 80px;background:var(--charcoal);position:relative;overflow:hidden;}
+.page-hero::after{content:'Journal';position:absolute;right:-2%;bottom:-10%;font-family:'Cormorant Garamond',serif;font-size:clamp(8rem,18vw,16rem);font-weight:600;color:rgba(255,255,255,0.03);line-height:1;pointer-events:none;letter-spacing:-0.02em;}
+.page-hero-label{font-size:0.7rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:8px;}
+.page-hero-label::before{content:'';width:24px;height:1px;background:var(--gold);}
+.page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:300;color:var(--cream);line-height:1.1;max-width:700px;margin-bottom:1.5rem;}
+.page-hero h1 em{font-style:italic;color:var(--terracotta-light);}
+.page-hero p{font-size:1rem;font-weight:300;color:var(--slate-light);max-width:500px;line-height:1.8;}
+
+/* FILTER BAR */
+.filter-bar{background:var(--white);border-bottom:1px solid var(--cream-dark);padding:0 8%;display:flex;align-items:center;gap:0;overflow-x:auto;}
+.filter-btn{padding:18px 20px;font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--slate);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all 0.2s;font-family:'Outfit',sans-serif;}
+.filter-btn:hover{color:var(--terracotta);}
+.filter-btn.active{color:var(--terracotta);border-bottom-color:var(--terracotta);}
+
+/* MAIN LAYOUT */
+.blog-main{padding:60px 8%;display:grid;grid-template-columns:1fr 340px;gap:4rem;}
+
+/* FEATURED POST */
+.featured-post{grid-column:1;margin-bottom:3rem;}
+.featured-label{font-size:0.65rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-muted);background:var(--gold-light);padding:4px 12px;width:fit-content;margin-bottom:1.5rem;}
+.featured-post-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:0;background:var(--white);}
+.featured-post-img{overflow:hidden;}
+.featured-post-img img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(0.85);transition:transform 0.4s,filter 0.3s;}
+.featured-post-inner:hover .featured-post-img img{transform:scale(1.03);filter:saturate(1);}
+.featured-post-body{padding:2.5rem;}
+.post-cat{font-size:0.65rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--terracotta);margin-bottom:0.75rem;}
+.featured-post-body h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:400;line-height:1.2;color:var(--charcoal);margin-bottom:1rem;}
+.featured-post-body p{font-size:0.9rem;font-weight:300;color:var(--slate);line-height:1.8;margin-bottom:1.5rem;}
+.post-meta{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;}
+.post-meta-avatar{width:36px;height:36px;border-radius:50%;background:var(--terracotta);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:600;color:var(--cream);}
+.post-meta-info{font-size:0.75rem;color:var(--slate-light);}
+.post-meta-info strong{display:block;color:var(--charcoal);font-size:0.8rem;font-weight:500;}
+.read-link{font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--terracotta);text-decoration:none;border-bottom:1px solid var(--terracotta);padding-bottom:2px;display:inline-block;}
+
+/* POST GRID */
+.posts-section{grid-column:1;}
+.posts-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--cream-dark);}
+.post-card{background:var(--white);overflow:hidden;transition:all 0.3s;}
+.post-card-img{overflow:hidden;position:relative;}
+.post-card-img img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;filter:saturate(0.8);transition:transform 0.4s,filter 0.3s;}
+.post-card:hover .post-card-img img{transform:scale(1.04);filter:saturate(1);}
+.post-card-tag{position:absolute;top:1rem;left:1rem;background:var(--charcoal);color:var(--gold-light);font-size:0.6rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:4px 10px;}
+.post-card-body{padding:1.5rem;}
+.post-card-body h3{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;line-height:1.3;color:var(--charcoal);margin-bottom:0.6rem;}
+.post-card-body p{font-size:0.82rem;font-weight:300;color:var(--slate);line-height:1.7;margin-bottom:1rem;}
+.post-card-footer{display:flex;justify-content:space-between;align-items:center;padding-top:1rem;border-top:1px solid var(--cream-dark);}
+.post-date{font-size:0.7rem;color:var(--slate-light);}
+.post-read-time{font-size:0.7rem;color:var(--terracotta);font-weight:500;}
+
+/* LIST-STYLE POSTS */
+.posts-list{margin-top:3rem;}
+.posts-list-title{font-size:0.7rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--slate);margin-bottom:1.5rem;padding-bottom:0.75rem;border-bottom:2px solid var(--cream-dark);}
+.post-list-item{display:grid;grid-template-columns:80px 1fr;gap:1rem;padding:1.25rem 0;border-bottom:1px solid var(--cream-dark);text-decoration:none;}
+.post-list-item:last-child{border-bottom:none;}
+.post-list-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--terracotta-light);line-height:1;}
+.post-list-content h4{font-size:0.9rem;font-weight:500;color:var(--charcoal);line-height:1.4;margin-bottom:4px;}
+.post-list-content span{font-size:0.72rem;color:var(--slate-light);}
+.post-list-item:hover .post-list-content h4{color:var(--terracotta);}
+
+/* SIDEBAR */
+.sidebar{grid-row:1/4;}
+.sidebar-sticky{position:sticky;top:90px;}
+.sidebar-widget{margin-bottom:2rem;}
+.widget-title{font-size:0.68rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--charcoal);margin-bottom:1rem;padding-bottom:0.75rem;border-bottom:2px solid var(--terracotta);}
+
+/* ABOUT WIDGET */
+.about-widget{background:var(--charcoal);padding:2rem;}
+.about-widget-img{width:70px;height:70px;border-radius:50%;object-fit:cover;object-position:top;margin-bottom:1rem;border:3px solid var(--gold);}
+.about-widget h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;color:var(--cream);margin-bottom:0.25rem;}
+.about-widget .role{font-size:0.7rem;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.75rem;}
+.about-widget p{font-size:0.8rem;font-weight:300;color:var(--slate-light);line-height:1.7;}
+.about-widget .follow-btn{display:block;margin-top:1rem;background:var(--terracotta);color:var(--white);text-align:center;padding:10px;font-size:0.75rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;}
+.about-widget .follow-btn:hover{background:var(--terracotta-dark);}
+
+/* CATEGORIES WIDGET */
+.categories-widget{background:var(--white);padding:1.5rem;}
+.cat-item{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--cream-dark);text-decoration:none;}
+.cat-item:last-child{border-bottom:none;}
+.cat-item span:first-child{font-size:0.85rem;color:var(--charcoal);font-weight:300;}
+.cat-item span:last-child{font-size:0.7rem;background:var(--cream);color:var(--terracotta);padding:2px 8px;font-weight:500;}
+.cat-item:hover span:first-child{color:var(--terracotta);}
+
+/* PRODUCT WIDGET */
+.product-widget{background:var(--terracotta);padding:1.75rem;}
+.product-widget h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;font-style:italic;color:var(--cream);margin-bottom:0.5rem;line-height:1.3;}
+.product-widget p{font-size:0.8rem;font-weight:300;color:rgba(250,246,240,0.8);margin-bottom:1.25rem;line-height:1.6;}
+.product-widget a{display:block;background:var(--gold);color:var(--charcoal);text-align:center;padding:10px;font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;}
+.product-widget a:hover{background:var(--gold-light);}
+
+/* NEWSLETTER WIDGET */
+.newsletter-widget{background:var(--cream-dark);padding:1.75rem;}
+.newsletter-widget p{font-size:0.85rem;font-weight:300;color:var(--slate);margin-bottom:1rem;line-height:1.6;}
+.nl-input{width:100%;padding:10px 12px;border:1px solid var(--terracotta-light);background:var(--white);font-family:'Outfit',sans-serif;font-size:0.85rem;color:var(--charcoal);outline:none;margin-bottom:8px;}
+.nl-btn{width:100%;background:var(--charcoal);color:var(--cream);border:none;padding:10px;font-family:'Outfit',sans-serif;font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
+.nl-btn:hover{background:var(--terracotta);}
+
+/* POPULAR WIDGET */
+.popular-widget{background:var(--white);padding:1.5rem;}
+.popular-item{display:flex;gap:0.75rem;padding:0.75rem 0;border-bottom:1px solid var(--cream-dark);text-decoration:none;}
+.popular-item:last-child{border-bottom:none;}
+.popular-num{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--terracotta-light);line-height:1;flex-shrink:0;width:28px;}
+.popular-info h4{font-size:0.82rem;font-weight:500;color:var(--charcoal);line-height:1.3;margin-bottom:4px;}
+.popular-info span{font-size:0.68rem;color:var(--slate-light);}
+.popular-item:hover .popular-info h4{color:var(--terracotta);}
+
+/* TAGS WIDGET */
+.tags-widget{background:var(--white);padding:1.5rem;}
+.tags-cloud{display:flex;flex-wrap:wrap;gap:6px;margin-top:0.75rem;}
+.tag{font-size:0.7rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--slate);border:1px solid var(--cream-dark);padding:5px 12px;text-decoration:none;transition:all 0.2s;}
+.tag:hover{background:var(--terracotta);color:var(--white);border-color:var(--terracotta);}
+
+/* PAGINATION */
+.pagination{display:flex;justify-content:center;align-items:center;gap:4px;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--cream-dark);}
+.page-btn{width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:500;color:var(--slate);border:1px solid var(--cream-dark);background:var(--white);cursor:pointer;transition:all 0.2s;text-decoration:none;}
+.page-btn:hover,.page-btn.active{background:var(--terracotta);color:var(--white);border-color:var(--terracotta);}
+.page-btn.prev-next{width:auto;padding:0 16px;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;}
+
+/* CTA BANNER */
+.blog-cta{background:var(--charcoal);padding:70px 8%;text-align:center;}
+.blog-cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:300;color:var(--cream);margin-bottom:1rem;}
+.blog-cta h2 em{color:var(--terracotta-light);font-style:italic;}
+.blog-cta p{font-size:0.9rem;font-weight:300;color:var(--slate-light);max-width:500px;margin:0 auto 2rem;line-height:1.8;}
+.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.btn-p{background:var(--terracotta);color:var(--white);padding:13px 28px;border-radius:2px;font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;display:inline-block;}
+.btn-p:hover{background:var(--terracotta-dark);}
+.btn-o{background:transparent;color:var(--gold-light);padding:13px 28px;border-radius:2px;font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;border:1px solid var(--gold-muted);display:inline-block;}
+.btn-o:hover{background:rgba(196,162,74,0.1);}
+
+footer{background:var(--charcoal);padding:3rem 8% 1.5rem;border-top:1px solid rgba(255,255,255,0.06);}
+.footer-bottom-bar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-bottom-bar p{font-size:0.75rem;color:var(--slate-light);}
+.footer-nav-links{display:flex;gap:1.5rem;}
+.footer-nav-links a{font-size:0.75rem;color:var(--slate-light);text-decoration:none;transition:color 0.2s;}
+.footer-nav-links a:hover{color:var(--cream);}
+
+@media(max-width:900px){
+  .blog-main{grid-template-columns:1fr;gap:2rem;}
+  .sidebar{grid-row:auto;}
+  .sidebar-sticky{position:static;}
+  .featured-post-inner{grid-template-columns:1fr;}
+  .posts-grid{grid-template-columns:1fr;}
+  .nav-links,.nav-cta{display:none;}
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="nurahub-website.html" class="nav-logo">Nura <span>Hub</span> Limited</a>
+  <ul class="nav-links">
+    <li><a href="nurahub-website.html#about">About</a></li>
+    <li><a href="nurahub-website.html#services">Services</a></li>
+    <li><a href="nurahub-website.html#packages">Packages</a></li>
+    <li><a href="nurahub-blog.html" class="active">Insights</a></li>
+    <li><a href="nurahub-products.html">Resources</a></li>
+  </ul>
+  <a href="nurahub-website.html#contact" class="nav-cta">Work With Us</a>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-label">The Nura Hub Journal</div>
+  <h1>Insights on Gender Equity,<br><em>Women's Leadership</em> &amp; Workplace Inclusion</h1>
+  <p>Evidence-based articles, practical guides, and stories from the frontlines of gender equity work in Nigeria and beyond.</p>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="setFilter(this,'all')">All Articles</button>
+  <button class="filter-btn" onclick="setFilter(this,'gender')">Gender Mainstreaming</button>
+  <button class="filter-btn" onclick="setFilter(this,'postpartum')">Postpartum &amp; Workplace</button>
+  <button class="filter-btn" onclick="setFilter(this,'policy')">Policy &amp; Law</button>
+  <button class="filter-btn" onclick="setFilter(this,'leadership')">Women's Leadership</button>
+  <button class="filter-btn" onclick="setFilter(this,'research')">Research &amp; Data</button>
+</div>
+
+<!-- MAIN BLOG LAYOUT -->
+<div class="blog-main">
+
+  <!-- FEATURED POST -->
+  <div class="featured-post">
+    <div class="featured-label">✦ Featured Article</div>
+    <div class="featured-post-inner">
+      <div class="featured-post-img">
+        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=700&q=80" alt="Women in workplace" />
+      </div>
+      <div class="featured-post-body">
+        <div class="post-cat">Postpartum &amp; Workplace</div>
+        <h2>Why Postpartum Support Is the Next Frontier in Workplace Inclusion</h2>
+        <p>Most organizations stop at maternity leave policy. The real work begins at return. Here's why postpartum support is not a perk — it's a retention strategy, a talent strategy, and a human rights issue.</p>
+        <div class="post-meta">
+          <div class="post-meta-avatar">SH</div>
+          <div class="post-meta-info">
+            <strong>Barr. Safiya Hamza Jibrin</strong>
+            April 3, 2025 · 8 min read
+          </div>
+        </div>
+        <a href="nurahub-post-1.html" class="read-link">Read Full Article →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- POSTS GRID -->
+  <div class="posts-section">
+    <div class="posts-grid">
+
+      <div class="post-card" data-cat="gender">
+        <div class="post-card-img">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=500&q=80" alt="Policy" />
+          <div class="post-card-tag">Gender Mainstreaming</div>
+        </div>
+        <div class="post-card-body">
+          <h3>From Policy Paper to Organizational Reality: Closing the Implementation Gap</h3>
+          <p>Gender policies exist on paper in most Nigerian organisations. Why don't they translate? We dissect five structural blockers and how forward-thinking leaders are dismantling them.</p>
+          <div class="post-card-footer">
+            <span class="post-date">March 2025</span>
+            <span class="post-read-time">6 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="leadership">
+        <div class="post-card-img">
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=500&q=80" alt="Leadership" />
+          <div class="post-card-tag">Women's Leadership</div>
+        </div>
+        <div class="post-card-body">
+          <h3>What Does It Actually Mean to "Become a Woman in Power"?</h3>
+          <p>Power is not given. It is claimed, built, and protected. Drawing from Barr. Safiya's book, this article unpacks what real leadership development looks like for Nigerian women today.</p>
+          <div class="post-card-footer">
+            <span class="post-date">February 2025</span>
+            <span class="post-read-time">7 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="policy">
+        <div class="post-card-img">
+          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=500&q=80" alt="Law and policy" />
+          <div class="post-card-tag">Policy &amp; Law</div>
+        </div>
+        <div class="post-card-body">
+          <h3>Nigeria's Gender Policy Landscape in 2025: What Organisations Must Know</h3>
+          <p>A practical breakdown of existing legal frameworks, what they require of organisations, and the gaps that remain dangerously unaddressed in both public and private sectors.</p>
+          <div class="post-card-footer">
+            <span class="post-date">January 2025</span>
+            <span class="post-read-time">10 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="gender">
+        <div class="post-card-img">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&q=80" alt="Training" />
+          <div class="post-card-tag">Capacity Building</div>
+        </div>
+        <div class="post-card-body">
+          <h3>What Real Gender Sensitivity Training Looks Like — And Why Most Workshops Fail</h3>
+          <p>A one-day checkbox workshop will not change your culture. Here's what evidence-based gender sensitivity training actually requires, and how to demand more from your providers.</p>
+          <div class="post-card-footer">
+            <span class="post-date">December 2024</span>
+            <span class="post-read-time">5 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="research">
+        <div class="post-card-img">
+          <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=500&q=80" alt="Research" />
+          <div class="post-card-tag">Research &amp; Data</div>
+        </div>
+        <div class="post-card-body">
+          <h3>The Business Case for Gender Equity: Data Every Nigerian CEO Should See</h3>
+          <p>Beyond the moral argument — here are the economic, productivity, and reputational metrics that make gender equity not just right, but strategically essential for any serious organisation.</p>
+          <div class="post-card-footer">
+            <span class="post-date">November 2024</span>
+            <span class="post-read-time">8 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="postpartum">
+        <div class="post-card-img">
+          <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=500&q=80" alt="Mothers" />
+          <div class="post-card-tag">Postpartum Support</div>
+        </div>
+        <div class="post-card-body">
+          <h3>Designing a Lactation-Friendly Workplace: A Practical Guide for HR Teams</h3>
+          <p>From physical space to flexible scheduling and emotional support, this guide walks HR professionals through every element of a postpartum-supportive workplace framework.</p>
+          <div class="post-card-footer">
+            <span class="post-date">October 2024</span>
+            <span class="post-read-time">9 min read</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MORE ARTICLES LIST -->
+    <div class="posts-list">
+      <div class="posts-list-title">More Articles</div>
+
+      <a href="#" class="post-list-item">
+        <div class="post-list-num">07</div>
+        <div class="post-list-content">
+          <h4>Gender Audits Explained: What They Are, What They Find, and Why Your Organisation Needs One</h4>
+          <span>Research · September 2024 · 6 min read</span>
+        </div>
+      </a>
+      <a href="#" class="post-list-item">
+        <div class="post-list-num">08</div>
+        <div class="post-list-content">
+          <h4>Unconscious Bias in Nigerian Workplaces: How It Shows Up and How to Address It</h4>
+          <span>Training · August 2024 · 7 min read</span>
+        </div>
+      </a>
+      <a href="#" class="post-list-item">
+        <div class="post-list-num">09</div>
+        <div class="post-list-content">
+          <h4>How to Write a Workplace Sexual Harassment Policy That Actually Protects Women</h4>
+          <span>Policy &amp; Law · July 2024 · 11 min read</span>
+        </div>
+      </a>
+      <a href="#" class="post-list-item">
+        <div class="post-list-num">10</div>
+        <div class="post-list-content">
+          <h4>Strategic Planning with a Gender Lens: A Step-by-Step Guide for NGOs</h4>
+          <span>Strategy · June 2024 · 9 min read</span>
+        </div>
+      </a>
+      <a href="#" class="post-list-item">
+        <div class="post-list-num">11</div>
+        <div class="post-list-content">
+          <h4>Why "Women's Empowerment" Programmes Often Fail — and What Works Instead</h4>
+          <span>Gender Mainstreaming · May 2024 · 8 min read</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- PAGINATION -->
+    <div class="pagination">
+      <a href="#" class="page-btn prev-next">← Prev</a>
+      <a href="#" class="page-btn active">1</a>
+      <a href="#" class="page-btn">2</a>
+      <a href="#" class="page-btn">3</a>
+      <span style="font-size:0.85rem;color:var(--slate-light);padding:0 8px;">...</span>
+      <a href="#" class="page-btn">8</a>
+      <a href="#" class="page-btn prev-next">Next →</a>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-sticky">
+
+      <!-- ABOUT -->
+      <div class="sidebar-widget about-widget">
+        <img class="about-widget-img" src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=200&q=80" alt="Barr. Safiya" />
+        <h3>Barr. Safiya Hamza Jibrin</h3>
+        <div class="role">Founder, Nura Hub Limited</div>
+        <p>Legal practitioner, author, and gender equity advocate. Writing about workplace inclusion, women's leadership, and policy in Nigeria.</p>
+        <a href="nurahub-website.html#founder" class="follow-btn">Meet the Founder →</a>
+      </div>
+
+      <!-- CATEGORIES -->
+      <div class="sidebar-widget categories-widget">
+        <div class="widget-title">Topics</div>
+        <a href="#" class="cat-item"><span>Gender Mainstreaming</span><span>12</span></a>
+        <a href="#" class="cat-item"><span>Postpartum &amp; Workplace</span><span>8</span></a>
+        <a href="#" class="cat-item"><span>Policy &amp; Law</span><span>9</span></a>
+        <a href="#" class="cat-item"><span>Women's Leadership</span><span>11</span></a>
+        <a href="#" class="cat-item"><span>Research &amp; Data</span><span>6</span></a>
+        <a href="#" class="cat-item"><span>Capacity Building</span><span>7</span></a>
+      </div>
+
+      <!-- PRODUCT WIDGET -->
+      <div class="sidebar-widget product-widget">
+        <h3>Free Gender Policy Checklist</h3>
+        <p>Download our free 20-point checklist to audit your organisation's current gender equity practices.</p>
+        <a href="nurahub-products.html">Download Free →</a>
+      </div>
+
+      <!-- POPULAR POSTS -->
+      <div class="sidebar-widget popular-widget">
+        <div class="widget-title">Most Read</div>
+        <a href="nurahub-post-1.html" class="popular-item">
+          <div class="popular-num">1</div>
+          <div class="popular-info">
+            <h4>Why Postpartum Support Is the Next Frontier in Workplace Inclusion</h4>
+            <span>4.2k reads</span>
+          </div>
+        </a>
+        <a href="#" class="popular-item">
+          <div class="popular-num">2</div>
+          <div class="popular-info">
+            <h4>The Business Case for Gender Equity: Data Every CEO Should See</h4>
+            <span>3.8k reads</span>
+          </div>
+        </a>
+        <a href="#" class="popular-item">
+          <div class="popular-num">3</div>
+          <div class="popular-info">
+            <h4>Nigeria's Gender Policy Landscape in 2025</h4>
+            <span>3.1k reads</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- NEWSLETTER -->
+      <div class="sidebar-widget newsletter-widget">
+        <div class="widget-title">Weekly Insights</div>
+        <p>Get gender equity insights, resources, and policy updates delivered to your inbox every Tuesday.</p>
+        <input class="nl-input" type="email" placeholder="your@email.com" />
+        <button class="nl-btn" type="button">Subscribe Free</button>
+      </div>
+
+      <!-- TAGS -->
+      <div class="sidebar-widget tags-widget">
+        <div class="widget-title">Tags</div>
+        <div class="tags-cloud">
+          <a href="#" class="tag">Nigeria</a>
+          <a href="#" class="tag">Gender Equity</a>
+          <a href="#" class="tag">HR Policy</a>
+          <a href="#" class="tag">Postpartum</a>
+          <a href="#" class="tag">Leadership</a>
+          <a href="#" class="tag">Inclusion</a>
+          <a href="#" class="tag">NGOs</a>
+          <a href="#" class="tag">Workplace</a>
+          <a href="#" class="tag">Women's Rights</a>
+          <a href="#" class="tag">Training</a>
+        </div>
+      </div>
+
+    </div>
+  </aside>
+
+</div>
+
+<!-- BLOG CTA -->
+<div class="blog-cta">
+  <h2>Ready to Move From <em>Reading to Acting?</em></h2>
+  <p>Our consulting packages are designed to turn these insights into real organisational change. Let's talk.</p>
+  <div class="cta-actions">
+    <a href="nurahub-website.html#packages" class="btn-p">View Our Packages</a>
+    <a href="nurahub-products.html" class="btn-o">Download Free Resources</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom-bar">
+    <p>© 2025 Nura Hub Limited · Empowering Women Across Nigeria</p>
+    <div class="footer-nav-links">
+      <a href="nurahub-website.html">Home</a>
+      <a href="nurahub-blog.html">Blog</a>
+      <a href="nurahub-products.html">Resources</a>
+      <a href="nurahub-website.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function setFilter(btn, cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.post-card').forEach(card => {
+    if (cat === 'all' || card.dataset.cat === cat) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.post-card,.post-list-item').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(16px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>

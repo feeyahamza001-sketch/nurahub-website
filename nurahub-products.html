@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources & Digital Products — Nura Hub Limited</title>
+<meta name="description" content="Downloadable toolkits, templates, masterclasses and guides for gender equity in Nigerian organisations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --terracotta:#B5513A;--terracotta-dark:#8C3A25;--terracotta-light:#E8C4B5;
+  --gold:#C4A24A;--gold-light:#E8D89A;--gold-muted:#8C7235;
+  --cream:#FAF6F0;--cream-dark:#F0E8DC;--charcoal:#2C2926;
+  --slate:#5C5550;--slate-light:#8C8480;--white:#FFFFFF;
+  --green:#2D7A4F;--green-light:#E8F5EE;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--charcoal);overflow-x:hidden;}
+
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(250,246,240,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--terracotta-light);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:70px;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--terracotta-dark);letter-spacing:0.02em;text-decoration:none;}
+.nav-logo span{color:var(--gold-muted);font-style:italic;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{font-size:0.82rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--slate);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--terracotta);}
+.nav-cta{background:var(--terracotta);color:var(--white);padding:10px 22px;border-radius:2px;font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;}
+.nav-cta:hover{background:var(--terracotta-dark);}
+
+/* HERO */
+.products-hero{padding:140px 8% 80px;background:var(--charcoal);position:relative;overflow:hidden;}
+.products-hero::after{content:'Shop';position:absolute;right:-1%;bottom:-10%;font-family:'Cormorant Garamond',serif;font-size:clamp(8rem,18vw,16rem);font-weight:600;color:rgba(255,255,255,0.03);line-height:1;pointer-events:none;}
+.hero-label{font-size:0.7rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:8px;}
+.hero-label::before{content:'';width:24px;height:1px;background:var(--gold);}
+.products-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:300;color:var(--cream);line-height:1.1;max-width:700px;margin-bottom:1.5rem;}
+.products-hero h1 em{font-style:italic;color:var(--gold-light);}
+.products-hero p{font-size:1rem;font-weight:300;color:var(--slate-light);max-width:520px;line-height:1.8;margin-bottom:2rem;}
+.trust-row{display:flex;gap:2rem;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:0.78rem;font-weight:300;color:rgba(250,246,240,0.6);}
+.trust-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0;}
+
+/* FREE BANNER */
+.free-banner{background:var(--green);padding:14px 8%;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+.free-banner p{font-size:0.85rem;font-weight:500;color:var(--white);}
+.free-banner p span{background:rgba(255,255,255,0.2);padding:2px 10px;font-weight:600;}
+.free-banner a{font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.5);}
+
+/* CATEGORIES NAV */
+.cat-nav{background:var(--white);border-bottom:1px solid var(--cream-dark);padding:0 8%;display:flex;gap:0;overflow-x:auto;}
+.cat-tab{padding:18px 20px;font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--slate);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all 0.2s;font-family:'Outfit',sans-serif;}
+.cat-tab.active,.cat-tab:hover{color:var(--terracotta);border-bottom-color:var(--terracotta);}
+
+/* MAIN */
+main{padding:70px 8%;}
+
+/* SECTION TITLE */
+.sec-label{font-size:0.68rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--terracotta);margin-bottom:0.5rem;display:flex;align-items:center;gap:8px;}
+.sec-label::before{content:'';width:20px;height:1px;background:var(--terracotta);}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:400;color:var(--charcoal);margin-bottom:3rem;}
+.sec-title em{color:var(--terracotta);font-style:italic;}
+
+/* FREE RESOURCES */
+.free-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:5rem;}
+.free-card{background:var(--white);border:1px solid var(--cream-dark);overflow:hidden;transition:all 0.3s;position:relative;}
+.free-card:hover{border-color:var(--terracotta-light);transform:translateY(-4px);}
+.free-badge{position:absolute;top:1rem;right:1rem;background:var(--green);color:var(--white);font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 10px;}
+.free-card-icon{height:130px;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:4rem;font-style:italic;font-weight:300;}
+.free-card.pdf .free-card-icon{background:linear-gradient(135deg,#F0E8DC,#E8C4B5);color:var(--terracotta);}
+.free-card.checklist .free-card-icon{background:linear-gradient(135deg,#E8F5EE,#C8E6D0);color:var(--green);}
+.free-card.toolkit .free-card-icon{background:linear-gradient(135deg,#F5F0E0,#EAD89A);color:var(--gold-muted);}
+.free-card-body{padding:1.5rem;}
+.free-card-body h3{font-size:1rem;font-weight:500;color:var(--charcoal);margin-bottom:0.5rem;line-height:1.3;}
+.free-card-body p{font-size:0.82rem;font-weight:300;color:var(--slate);line-height:1.7;margin-bottom:1.25rem;}
+.free-card-meta{display:flex;gap:0.75rem;margin-bottom:1rem;flex-wrap:wrap;}
+.meta-tag{font-size:0.65rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--slate);background:var(--cream-dark);padding:3px 10px;}
+.download-btn{width:100%;background:var(--charcoal);color:var(--cream);border:none;padding:12px;font-family:'Outfit',sans-serif;font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;display:flex;align-items:center;justify-content:center;gap:6px;}
+.download-btn:hover{background:var(--terracotta);}
+.download-btn::before{content:'↓';font-size:0.9rem;}
+
+/* PAID PRODUCTS */
+.paid-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--cream-dark);margin-bottom:5rem;}
+.paid-card{background:var(--white);padding:2.5rem;position:relative;overflow:hidden;transition:background 0.3s;}
+.paid-card:hover{background:var(--cream);}
+.paid-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--gold);transition:height 0.4s;}
+.paid-card:hover::before{height:100%;}
+.paid-card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;}
+.paid-type{font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-muted);background:var(--gold-light);padding:4px 10px;display:inline-block;}
+.paid-price{text-align:right;}
+.paid-price .amount{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:400;color:var(--terracotta);line-height:1;}
+.paid-price .currency{font-size:0.7rem;color:var(--slate-light);display:block;margin-top:2px;}
+.paid-card h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:var(--charcoal);margin-bottom:0.75rem;line-height:1.2;}
+.paid-card p{font-size:0.85rem;font-weight:300;color:var(--slate);line-height:1.8;margin-bottom:1.25rem;}
+.paid-includes{list-style:none;margin-bottom:1.5rem;}
+.paid-includes li{font-size:0.82rem;font-weight:300;color:var(--slate);padding:5px 0;border-bottom:1px solid var(--cream-dark);display:flex;align-items:flex-start;gap:8px;}
+.paid-includes li::before{content:'✓';color:var(--green);font-weight:600;flex-shrink:0;}
+.buy-btn{display:block;background:var(--terracotta);color:var(--white);text-align:center;padding:13px;font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border:2px solid var(--terracotta);transition:all 0.2s;}
+.buy-btn:hover{background:transparent;color:var(--terracotta);}
+.buy-btn.gold{background:var(--gold);border-color:var(--gold);color:var(--charcoal);}
+.buy-btn.gold:hover{background:transparent;color:var(--gold-muted);}
+
+/* FLAGSHIP PRODUCT */
+.flagship{background:var(--charcoal);padding:4rem;display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:center;margin-bottom:5rem;}
+.flagship-label{font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.flagship h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:300;color:var(--cream);line-height:1.15;margin-bottom:1rem;}
+.flagship h2 em{color:var(--gold-light);font-style:italic;}
+.flagship-desc{font-size:0.95rem;font-weight:300;color:var(--slate-light);line-height:1.8;margin-bottom:1.5rem;}
+.flagship-modules{list-style:none;margin-bottom:2rem;}
+.flagship-modules li{font-size:0.85rem;color:rgba(250,246,240,0.75);padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;gap:10px;}
+.flagship-modules li::before{content:'→';color:var(--gold);flex-shrink:0;}
+.flagship-price-row{display:flex;align-items:center;gap:2rem;margin-bottom:1.5rem;}
+.flagship-price .amount{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:400;color:var(--gold-light);line-height:1;}
+.flagship-price .note{font-size:0.75rem;color:var(--slate-light);}
+.flagship-price .was{font-size:0.85rem;color:var(--slate-light);text-decoration:line-through;}
+.flagship-visual{background:linear-gradient(135deg,rgba(181,81,58,0.15),rgba(196,162,74,0.1));border:1px solid rgba(196,162,74,0.2);padding:3rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
+.course-mockup-icon{font-family:'Cormorant Garamond',serif;font-size:5rem;font-style:italic;font-weight:300;color:var(--gold-light);margin-bottom:1.5rem;line-height:1;}
+.course-mockup-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--cream);margin-bottom:0.5rem;}
+.course-modules-preview{display:flex;flex-direction:column;gap:8px;width:100%;margin-top:1.5rem;}
+.module-bar{background:rgba(255,255,255,0.05);border-left:2px solid var(--gold-muted);padding:8px 12px;font-size:0.75rem;color:rgba(250,246,240,0.6);text-align:left;}
+
+/* BOOKS SECTION */
+.books-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-bottom:5rem;}
+.book-card{background:var(--white);display:grid;grid-template-columns:120px 1fr;gap:1.5rem;padding:2rem;border:1px solid var(--cream-dark);transition:border-color 0.3s;}
+.book-card:hover{border-color:var(--terracotta-light);}
+.book-cover{width:120px;aspect-ratio:2/3;object-fit:cover;}
+.book-cover-placeholder{width:120px;aspect-ratio:2/3;display:flex;align-items:center;justify-content:center;padding:1rem;text-align:center;}
+.book-cover-placeholder.dark{background:var(--charcoal);}
+.book-cover-placeholder.pink{background:linear-gradient(135deg,#E8A0C0,#D4608A);}
+.book-cover-placeholder p{font-family:'Cormorant Garamond',serif;font-size:0.75rem;font-style:italic;line-height:1.4;}
+.book-cover-placeholder.dark p{color:var(--gold-light);}
+.book-cover-placeholder.pink p{color:var(--white);}
+.book-info .book-cat{font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--terracotta);margin-bottom:0.5rem;}
+.book-info h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:var(--charcoal);margin-bottom:0.25rem;line-height:1.3;}
+.book-info .author{font-size:0.8rem;color:var(--slate-light);margin-bottom:0.75rem;}
+.book-info p{font-size:0.82rem;font-weight:300;color:var(--slate);line-height:1.7;margin-bottom:1rem;}
+.book-buy-row{display:flex;gap:0.75rem;flex-wrap:wrap;}
+.book-btn{font-size:0.72rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:8px 16px;text-decoration:none;border:1px solid;transition:all 0.2s;display:inline-block;}
+.book-btn.primary{background:var(--terracotta);color:var(--white);border-color:var(--terracotta);}
+.book-btn.primary:hover{background:var(--terracotta-dark);}
+.book-btn.secondary{background:transparent;color:var(--charcoal);border-color:var(--cream-dark);}
+.book-btn.secondary:hover{border-color:var(--charcoal);}
+
+/* TESTIMONIALS */
+.testimonials{background:var(--cream-dark);padding:70px 8%;margin-bottom:0;}
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
+.testimonial-card{background:var(--white);padding:2rem;border-top:3px solid var(--terracotta);}
+.testimonial-quote{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:var(--charcoal);line-height:1.7;margin-bottom:1.25rem;}
+.testimonial-card cite{font-style:normal;font-size:0.78rem;color:var(--slate-light);}
+.testimonial-card cite strong{display:block;color:var(--charcoal);font-size:0.85rem;margin-bottom:2px;}
+
+/* CTA */
+.products-cta{background:var(--terracotta);padding:80px 8%;text-align:center;}
+.products-cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--cream);margin-bottom:1rem;}
+.products-cta p{font-size:0.95rem;font-weight:300;color:rgba(250,246,240,0.8);max-width:480px;margin:0 auto 2rem;line-height:1.8;}
+.cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.btn-w{background:var(--white);color:var(--terracotta);padding:13px 30px;font-size:0.82rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;display:inline-block;}
+.btn-w:hover{background:var(--cream);}
+.btn-t{background:transparent;color:var(--cream);padding:13px 30px;font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;border:1px solid rgba(250,246,240,0.5);display:inline-block;}
+.btn-t:hover{border-color:var(--cream);}
+
+footer{background:var(--charcoal);padding:2rem 8%;}
+.footer-bar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-bar p{font-size:0.75rem;color:var(--slate-light);}
+.footer-bar-links{display:flex;gap:1.5rem;}
+.footer-bar-links a{font-size:0.75rem;color:var(--slate-light);text-decoration:none;}
+.footer-bar-links a:hover{color:var(--cream);}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(44,41,38,0.85);z-index:1000;display:none;align-items:center;justify-content:center;padding:1rem;}
+.modal-overlay.open{display:flex;}
+.modal{background:var(--white);max-width:480px;width:100%;padding:2.5rem;position:relative;}
+.modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.2rem;cursor:pointer;color:var(--slate);line-height:1;}
+.modal h3{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:var(--charcoal);margin-bottom:0.5rem;}
+.modal p{font-size:0.85rem;color:var(--slate);margin-bottom:1.5rem;line-height:1.6;}
+.modal input{width:100%;padding:12px;border:1px solid var(--cream-dark);font-family:'Outfit',sans-serif;font-size:0.9rem;margin-bottom:0.75rem;outline:none;color:var(--charcoal);}
+.modal input:focus{border-color:var(--terracotta);}
+.modal-submit{width:100%;background:var(--terracotta);color:var(--white);border:none;padding:13px;font-family:'Outfit',sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
+.modal-submit:hover{background:var(--terracotta-dark);}
+
+@media(max-width:900px){
+  .free-grid,.paid-grid,.testimonials-grid{grid-template-columns:1fr;}
+  .flagship{grid-template-columns:1fr;gap:2rem;padding:2rem;}
+  .books-grid{grid-template-columns:1fr;}
+  .nav-links,.nav-cta{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="downloadModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h3 id="modalTitle">Download Free Resource</h3>
+    <p id="modalDesc">Enter your details to receive this resource directly to your email.</p>
+    <input type="text" placeholder="Your full name" id="modalName" />
+    <input type="email" placeholder="Your email address" id="modalEmail" />
+    <input type="text" placeholder="Organisation name (optional)" id="modalOrg" />
+    <button class="modal-submit" onclick="submitDownload()">Get Free Resource →</button>
+  </div>
+</div>
+
+<nav>
+  <a href="nurahub-website.html" class="nav-logo">Nura <span>Hub</span> Limited</a>
+  <ul class="nav-links">
+    <li><a href="nurahub-website.html#about">About</a></li>
+    <li><a href="nurahub-website.html#services">Services</a></li>
+    <li><a href="nurahub-blog.html">Insights</a></li>
+    <li><a href="nurahub-products.html" class="active">Resources</a></li>
+  </ul>
+  <a href="nurahub-website.html#contact" class="nav-cta">Work With Us</a>
+</nav>
+
+<!-- HERO -->
+<div class="products-hero">
+  <div class="hero-label">Resources &amp; Digital Products</div>
+  <h1>Tools to Accelerate<br><em>Gender Equity</em> in Your Organisation</h1>
+  <p>Free downloads, premium toolkits, online courses, and books — everything you need to move from intention to implementation.</p>
+  <div class="trust-row">
+    <div class="trust-item"><div class="trust-dot"></div><span>Instant downloads</span></div>
+    <div class="trust-item"><div class="trust-dot"></div><span>Nigeria-context specific</span></div>
+    <div class="trust-item"><div class="trust-dot"></div><span>Rights-based frameworks</span></div>
+    <div class="trust-item"><div class="trust-dot"></div><span>Practitioner-designed</span></div>
+  </div>
+</div>
+
+<!-- FREE BANNER -->
+<div class="free-banner">
+  <p>🎁 New: <span>Free Gender Policy Checklist</span> — 20 questions to audit your organisation's current gender practices</p>
+  <a href="#free-resources">Download Free →</a>
+</div>
+
+<!-- CATEGORY NAV -->
+<div class="cat-nav">
+  <button class="cat-tab active">All Resources</button>
+  <button class="cat-tab">Free Downloads</button>
+  <button class="cat-tab">Premium Toolkits</button>
+  <button class="cat-tab">Courses &amp; Masterclasses</button>
+  <button class="cat-tab">Books</button>
+</div>
+
+<main>
+
+  <!-- FREE RESOURCES -->
+  <div id="free-resources">
+    <div class="sec-label">Zero cost. Maximum value.</div>
+    <div class="sec-title">Free <em>Resources</em> to Get Started</div>
+    <div class="free-grid">
+
+      <div class="free-card checklist">
+        <div class="free-badge">FREE</div>
+        <div class="free-card-icon">✓</div>
+        <div class="free-card-body">
+          <h3>Gender Policy Audit Checklist</h3>
+          <p>20 critical questions to assess how gender-equitable your organisation truly is. Identify gaps and prioritise next steps in under 30 minutes.</p>
+          <div class="free-card-meta">
+            <div class="meta-tag">PDF</div>
+            <div class="meta-tag">2 pages</div>
+            <div class="meta-tag">Instant</div>
+          </div>
+          <button class="download-btn" onclick="openModal('Gender Policy Audit Checklist','Get your free 20-point gender policy audit checklist.')">Download Free</button>
+        </div>
+      </div>
+
+      <div class="free-card pdf">
+        <div class="free-badge">FREE</div>
+        <div class="free-card-icon">§</div>
+        <div class="free-card-body">
+          <h3>Postpartum Return-to-Work Quick Guide</h3>
+          <p>A practical one-page guide for HR managers on the five non-negotiables every organisation must have in place before a new mother returns from leave.</p>
+          <div class="free-card-meta">
+            <div class="meta-tag">PDF</div>
+            <div class="meta-tag">1 page</div>
+            <div class="meta-tag">HR Teams</div>
+          </div>
+          <button class="download-btn" onclick="openModal('Postpartum Return-to-Work Quick Guide','Download your free one-page postpartum HR guide.')">Download Free</button>
+        </div>
+      </div>
+
+      <div class="free-card toolkit">
+        <div class="free-badge">FREE</div>
+        <div class="free-card-icon">◈</div>
+        <div class="free-card-body">
+          <h3>5 Signs Your Workplace Has a Gender Problem (And What to Do)</h3>
+          <p>A shareable mini-guide designed for senior leaders and managers. Identify common red flags and learn the first steps toward addressing them.</p>
+          <div class="free-card-meta">
+            <div class="meta-tag">PDF</div>
+            <div class="meta-tag">Leaders</div>
+            <div class="meta-tag">4 pages</div>
+          </div>
+          <button class="download-btn" onclick="openModal('Workplace Gender Problem Guide','Download your free leadership mini-guide.')">Download Free</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PAID TOOLKITS -->
+  <div class="sec-label">Premium tools</div>
+  <div class="sec-title">Paid <em>Toolkits</em> &amp; Templates</div>
+  <div class="paid-grid">
+
+    <div class="paid-card">
+      <div class="paid-card-header">
+        <div class="paid-type">Complete Toolkit</div>
+        <div class="paid-price">
+          <div class="amount">₦45,000</div>
+          <div class="currency">or $30 USD</div>
+        </div>
+      </div>
+      <h3>Gender-Inclusive Workplace Policy Template Pack</h3>
+      <p>A complete, editable, legally-referenced policy bundle covering all the key areas every Nigerian organisation needs — written by a legal practitioner.</p>
+      <ul class="paid-includes">
+        <li>Anti-sexual harassment policy template</li>
+        <li>Maternity &amp; postpartum leave policy</li>
+        <li>Flexible working arrangements policy</li>
+        <li>Gender equity &amp; inclusion statement</li>
+        <li>Grievance &amp; reporting procedure</li>
+        <li>Implementation guide (8 pages)</li>
+      </ul>
+      <a href="#" class="buy-btn" onclick="alert('Redirecting to Selar.co payment page...')">Buy on Selar.co →</a>
+    </div>
+
+    <div class="paid-card">
+      <div class="paid-card-header">
+        <div class="paid-type">Workshop Kit</div>
+        <div class="paid-price">
+          <div class="amount">₦35,000</div>
+          <div class="currency">or $23 USD</div>
+        </div>
+      </div>
+      <h3>Gender Sensitivity Workshop Facilitator Kit</h3>
+      <p>Everything you need to run a half-day gender sensitivity workshop for up to 30 people — no prior training experience required.</p>
+      <ul class="paid-includes">
+        <li>Full slide deck (42 slides, editable)</li>
+        <li>Facilitator notes and script</li>
+        <li>Participant workbook template</li>
+        <li>3 group activity guides</li>
+        <li>Pre/post evaluation forms</li>
+        <li>Certificate of participation template</li>
+      </ul>
+      <a href="#" class="buy-btn" onclick="alert('Redirecting to Selar.co payment page...')">Buy on Selar.co →</a>
+    </div>
+
+    <div class="paid-card">
+      <div class="paid-card-header">
+        <div class="paid-type">Strategic Tool</div>
+        <div class="paid-price">
+          <div class="amount">₦28,000</div>
+          <div class="currency">or $18 USD</div>
+        </div>
+      </div>
+      <h3>Postpartum-Friendly Workplace Design Toolkit</h3>
+      <p>A step-by-step implementation guide for designing lactation rooms, reintegration plans, and postpartum mental health support in your organisation.</p>
+      <ul class="paid-includes">
+        <li>Lactation room design checklist</li>
+        <li>Reintegration conversation guide</li>
+        <li>Manager coaching cards (12)</li>
+        <li>Employee wellbeing survey template</li>
+        <li>3-month reintegration plan template</li>
+      </ul>
+      <a href="#" class="buy-btn" onclick="alert('Redirecting to Selar.co payment page...')">Buy on Selar.co →</a>
+    </div>
+
+    <div class="paid-card">
+      <div class="paid-card-header">
+        <div class="paid-type">M&amp;E Framework</div>
+        <div class="paid-price">
+          <div class="amount">₦32,000</div>
+          <div class="currency">or $21 USD</div>
+        </div>
+      </div>
+      <h3>Gender M&amp;E Mini-Framework for NGOs &amp; Corporates</h3>
+      <p>A monitoring and evaluation framework specifically designed for tracking gender equity progress — with indicators, data collection templates, and a reporting structure.</p>
+      <ul class="paid-includes">
+        <li>25 gender equity indicators (customisable)</li>
+        <li>Data collection form templates</li>
+        <li>Quarterly reporting template</li>
+        <li>Dashboard template (Excel)</li>
+        <li>Interpretation &amp; decision guide</li>
+      </ul>
+      <a href="#" class="buy-btn" onclick="alert('Redirecting to Selar.co payment page...')">Buy on Selar.co →</a>
+    </div>
+
+  </div>
+
+  <!-- FLAGSHIP COURSE -->
+  <div class="flagship">
+    <div>
+      <div class="flagship-label">✦ Flagship Online Course</div>
+      <h2>Gender Mainstreaming<br><em>Masterclass</em></h2>
+      <p class="flagship-desc">A 6-module self-paced online course designed for HR professionals, NGO staff, corporate leaders, and government officials who want to deeply understand and implement gender mainstreaming in their organisations.</p>
+      <ul class="flagship-modules">
+        <li>Module 1: Understanding Gender vs. Sex — Foundations</li>
+        <li>Module 2: The Nigerian Legal &amp; Policy Framework</li>
+        <li>Module 3: Conducting a Gender Audit</li>
+        <li>Module 4: Designing Gender-Responsive Policies</li>
+        <li>Module 5: Training Teams &amp; Managing Resistance</li>
+        <li>Module 6: Monitoring, Evaluation &amp; Reporting</li>
+      </ul>
+      <div class="flagship-price-row">
+        <div class="flagship-price">
+          <div class="amount" style="color:var(--gold-light);font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:400;">₦85,000</div>
+          <div class="note" style="font-size:0.75rem;color:var(--slate-light);">One-time · Lifetime access · Certificate included</div>
+          <div class="was">~~₦120,000~~</div>
+        </div>
+      </div>
+      <a href="#" class="buy-btn gold" style="display:inline-block;padding:13px 30px;" onclick="alert('Redirecting to course enrollment...')">Enroll Now — ₦85,000 →</a>
+    </div>
+    <div class="flagship-visual">
+      <div class="course-mockup-icon">M.</div>
+      <div class="course-mockup-title">Gender Mainstreaming Masterclass</div>
+      <p style="font-size:0.75rem;color:var(--slate-light);margin-top:0.5rem;">6 Modules · Self-Paced · Certificate</p>
+      <div class="course-modules-preview">
+        <div class="module-bar">Module 1: Foundations of Gender</div>
+        <div class="module-bar">Module 2: Legal Framework Nigeria</div>
+        <div class="module-bar">Module 3: Gender Audit Process</div>
+        <div class="module-bar">Module 4: Policy Design</div>
+        <div class="module-bar">Module 5: Team Training</div>
+        <div class="module-bar">Module 6: M&amp;E &amp; Reporting</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOKS -->
+  <div class="sec-label">By Barr. Safiya Hamza Jibrin</div>
+  <div class="sec-title">Published <em>Books</em></div>
+  <div class="books-grid">
+
+    <div class="book-card">
+      <div class="book-cover-placeholder dark">
+        <p>Becoming a Woman in Power — Safiya Hamza Jibrin</p>
+      </div>
+      <div class="book-info">
+        <div class="book-cat">Women's Leadership · Personal Development</div>
+        <h3>Becoming a Woman in Power</h3>
+        <div class="author">Barr. Safiya Hamza Jibrin</div>
+        <p>Power is not given — it is built. This book is a roadmap for Nigerian women navigating leadership, ambition, and identity in a world that wasn't always designed for them.</p>
+        <div class="book-buy-row">
+          <a href="#" class="book-btn primary">Buy Now →</a>
+          <a href="#" class="book-btn secondary">Preview</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="book-cover-placeholder pink">
+        <p style="color:white;font-size:0.7rem;">Mummy! I Think I am Beautiful</p>
+      </div>
+      <div class="book-info">
+        <div class="book-cat">Children's Book · Self-Confidence</div>
+        <h3>Mummy! I Think I am Beautiful</h3>
+        <div class="author">Barr. Safiya Hamza Jibrin</div>
+        <p>A beautifully illustrated children's book celebrating every girl's journey to recognising her own worth, beauty, and belonging — through the gentle love of a mother.</p>
+        <div class="book-buy-row">
+          <a href="https://amazon.com" target="_blank" class="book-btn primary">Buy on Amazon →</a>
+          <a href="#" class="book-btn secondary">Selar.co</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<!-- TESTIMONIALS -->
+<div class="testimonials">
+  <div class="sec-label" style="padding:0 0;">What people are saying</div>
+  <div class="sec-title" style="margin-bottom:0;">Reader &amp; Client <em>Reviews</em></div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <p class="testimonial-quote">"The Gender Policy Template Pack saved us weeks of work. It's legally sound, culturally relevant to Nigeria, and immediately usable. Our board approved it without a single revision."</p>
+      <cite><strong>Director of HR</strong>Nigerian NGO, Abuja</cite>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-quote">"Becoming a Woman in Power came at exactly the right time in my career. Barr. Safiya writes with honesty and deep understanding of what Nigerian women actually face."</p>
+      <cite><strong>Senior Programme Officer</strong>UN Agency, Lagos</cite>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-quote">"The Masterclass is the most practical gender training I have ever taken — not abstract theories, but real tools we immediately applied in our organization."</p>
+      <cite><strong>Head of People &amp; Culture</strong>Private Sector, Kano</cite>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="products-cta">
+  <h2>Need a Custom Solution Instead?</h2>
+  <p>Our digital products are great starting points — but for deep, lasting organisational change, our consulting packages deliver transformational results.</p>
+  <div class="cta-row">
+    <a href="nurahub-website.html#packages" class="btn-w">View Consulting Packages</a>
+    <a href="nurahub-website.html#contact" class="btn-t">Talk to Us</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bar">
+    <p>© 2025 Nura Hub Limited · All digital products delivered via Selar.co &amp; email</p>
+    <div class="footer-bar-links">
+      <a href="nurahub-website.html">Home</a>
+      <a href="nurahub-blog.html">Blog</a>
+      <a href="nurahub-website.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function openModal(title, desc) {
+  document.getElementById('modalTitle').textContent = 'Download: ' + title;
+  document.getElementById('modalDesc').textContent = desc;
+  document.getElementById('downloadModal').classList.add('open');
+}
+function closeModal() {
+  document.getElementById('downloadModal').classList.remove('open');
+}
+function submitDownload() {
+  const name = document.getElementById('modalName').value;
+  const email = document.getElementById('modalEmail').value;
+  if (!name || !email) { alert('Please fill in your name and email.'); return; }
+  document.getElementById('downloadModal').innerHTML = `
+    <div style="text-align:center;padding:2rem;">
+      <div style="font-size:3rem;margin-bottom:1rem;">✓</div>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:#2C2926;margin-bottom:0.5rem;">On Its Way!</h3>
+      <p style="color:#5C5550;line-height:1.7;">Check your inbox — your free resource is being sent to <strong>${email}</strong>. Also check your spam folder.</p>
+      <button onclick="closeModal()" style="margin-top:1.5rem;background:#B5513A;color:white;border:none;padding:12px 28px;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:'Outfit',sans-serif;">Close</button>
+    </div>
+  `;
+}
+document.getElementById('downloadModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; } });
+}, {threshold:0.1});
+document.querySelectorAll('.free-card,.paid-card,.book-card,.testimonial-card').forEach(el => {
+  el.style.opacity='0'; el.style.transform='translateY(16px)';
+  el.style.transition='opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>

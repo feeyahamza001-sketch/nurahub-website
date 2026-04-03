@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nura Hub Limited — Empowering Systems. Elevating Women. Enabling Equity.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --terracotta: #B5513A;
+    --terracotta-dark: #8C3A25;
+    --terracotta-light: #E8C4B5;
+    --gold: #C4A24A;
+    --gold-light: #E8D89A;
+    --gold-muted: #8C7235;
+    --cream: #FAF6F0;
+    --cream-dark: #F0E8DC;
+    --charcoal: #2C2926;
+    --slate: #5C5550;
+    --slate-light: #8C8480;
+    --white: #FFFFFF;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(250,246,240,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--terracotta-light);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 70px;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 600;
+    color: var(--terracotta-dark);
+    letter-spacing: 0.02em;
+  }
+  .nav-logo span { color: var(--gold-muted); font-style: italic; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--slate);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--terracotta); }
+  .nav-cta {
+    background: var(--terracotta); color: var(--white);
+    padding: 10px 22px; border-radius: 2px;
+    font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--terracotta-dark); }
+  .nav-mobile-btn { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
+  .nav-mobile-btn span { display: block; width: 24px; height: 2px; background: var(--charcoal); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--charcoal);
+    display: grid; grid-template-columns: 1fr 1fr;
+    padding-top: 70px; overflow: hidden; position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(181,81,58,0.15) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-left {
+    padding: 8% 6% 8% 8%;
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative; z-index: 2;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(196,162,74,0.15);
+    border: 1px solid var(--gold-muted);
+    color: var(--gold-light); font-size: 0.7rem; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 6px 14px; border-radius: 2px; margin-bottom: 2rem;
+    width: fit-content;
+  }
+  .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 300; line-height: 1.1;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+  }
+  .hero h1 em {
+    font-style: italic; color: var(--terracotta-light);
+    display: block;
+  }
+  .hero h1 strong {
+    font-weight: 600; color: var(--gold-light);
+  }
+  .hero-tagline {
+    font-size: 0.9rem; font-weight: 300; color: var(--slate-light);
+    letter-spacing: 0.15em; text-transform: uppercase;
+    margin: 1.5rem 0 2rem; border-left: 2px solid var(--terracotta);
+    padding-left: 1rem;
+  }
+  .hero-desc {
+    font-size: 1rem; font-weight: 300; color: rgba(250,246,240,0.75);
+    line-height: 1.8; max-width: 480px; margin-bottom: 2.5rem;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--terracotta); color: var(--white);
+    padding: 14px 30px; border-radius: 2px;
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; text-decoration: none;
+    transition: all 0.2s; border: 2px solid var(--terracotta);
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--terracotta-dark); border-color: var(--terracotta-dark); }
+  .btn-outline {
+    background: transparent; color: var(--gold-light);
+    padding: 14px 30px; border-radius: 2px;
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; text-decoration: none;
+    transition: all 0.2s; border: 1px solid var(--gold-muted);
+    display: inline-block;
+  }
+  .btn-outline:hover { background: rgba(196,162,74,0.1); border-color: var(--gold-light); }
+  .hero-right {
+    position: relative; overflow: hidden;
+  }
+  .hero-img-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 100%; gap: 3px;
+  }
+  .hero-img-grid img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .hero-img-grid .main-img {
+    grid-column: 1; grid-row: 1 / 3;
+    filter: brightness(0.85) saturate(0.9);
+  }
+  .hero-img-grid .side-img {
+    filter: brightness(0.75) saturate(0.8);
+  }
+  .hero-overlay {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(44,41,38,0.9) 0%, transparent 50%);
+    padding: 3rem 2rem 2rem;
+  }
+  .hero-stats {
+    display: flex; gap: 2rem;
+    border-top: 1px solid rgba(196,162,74,0.3);
+    padding-top: 1.5rem; margin-top: 2rem;
+  }
+  .stat { }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem; font-weight: 600;
+    color: var(--gold-light); line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.7rem; font-weight: 400; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--slate-light); margin-top: 4px;
+  }
+
+  /* ── SECTION COMMONS ── */
+  section { padding: 90px 8%; }
+  .section-label {
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--terracotta);
+    margin-bottom: 1rem; display: flex; align-items: center; gap: 8px;
+  }
+  .section-label::before { content: ''; width: 24px; height: 1px; background: var(--terracotta); }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400; line-height: 1.15; color: var(--charcoal);
+  }
+  .section-title em { font-style: italic; color: var(--terracotta); }
+
+  /* ── MARQUEE ── */
+  .marquee-band {
+    background: var(--terracotta);
+    padding: 14px 0; overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-track {
+    display: inline-flex; gap: 0;
+    animation: marquee 30s linear infinite;
+  }
+  .marquee-track span {
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--cream);
+    padding: 0 2.5rem;
+  }
+  .marquee-track .dot {
+    color: var(--gold-light); padding: 0;
+  }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ── ABOUT ── */
+  .about { background: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 6rem; align-items: center; }
+  .about-img-stack { position: relative; }
+  .about-img-main {
+    width: 100%; aspect-ratio: 3/4; object-fit: cover;
+    border-radius: 0; filter: saturate(0.85);
+  }
+  .about-img-accent {
+    position: absolute; bottom: -30px; right: -30px;
+    width: 55%; aspect-ratio: 1;
+    object-fit: cover; object-position: top;
+    border: 4px solid var(--white);
+    filter: saturate(0.85);
+  }
+  .about-quote-card {
+    position: absolute; top: 30px; left: -20px;
+    background: var(--terracotta); color: var(--cream);
+    padding: 1.2rem 1.5rem; max-width: 220px;
+  }
+  .about-quote-card p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; font-style: italic; line-height: 1.5;
+    color: var(--cream);
+  }
+  .about-quote-card cite {
+    font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--gold-light); margin-top: 8px; display: block;
+    font-style: normal;
+  }
+  .about-content { padding-top: 1rem; }
+  .about-content .section-title { margin-bottom: 1.5rem; }
+  .about-content p {
+    font-size: 1rem; font-weight: 300; line-height: 1.9;
+    color: var(--slate); margin-bottom: 1.2rem;
+  }
+  .about-pillars {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    margin: 2rem 0;
+  }
+  .pillar {
+    border-left: 2px solid var(--terracotta-light);
+    padding-left: 1rem;
+  }
+  .pillar h4 {
+    font-size: 0.85rem; font-weight: 600; color: var(--charcoal);
+    margin-bottom: 4px;
+  }
+  .pillar p { font-size: 0.8rem; color: var(--slate-light); margin: 0; line-height: 1.5; }
+
+  /* ── SERVICES ── */
+  .services { background: var(--cream); }
+  .services-intro { max-width: 620px; margin-bottom: 4rem; }
+  .services-intro p { font-size: 1rem; font-weight: 300; color: var(--slate); line-height: 1.8; margin-top: 1rem; }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: var(--terracotta-light);
+  }
+  .service-card {
+    background: var(--white); padding: 2.5rem 2rem;
+    transition: all 0.3s; cursor: default;
+    position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; width: 0; height: 3px;
+    background: var(--terracotta);
+    transition: width 0.4s;
+  }
+  .service-card:hover::before { width: 100%; }
+  .service-card:hover { background: var(--cream); }
+  .service-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem; font-weight: 300;
+    color: var(--terracotta-light); line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .service-card h3 {
+    font-size: 1.1rem; font-weight: 500; color: var(--charcoal);
+    margin-bottom: 0.75rem; line-height: 1.3;
+  }
+  .service-card p {
+    font-size: 0.875rem; font-weight: 300; color: var(--slate);
+    line-height: 1.7;
+  }
+  .service-tag {
+    display: inline-block; margin-top: 1.2rem;
+    font-size: 0.65rem; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--terracotta);
+    border-bottom: 1px solid var(--terracotta); padding-bottom: 2px;
+  }
+
+  /* ── PACKAGES ── */
+  .packages { background: var(--charcoal); }
+  .packages .section-label { color: var(--gold-light); }
+  .packages .section-label::before { background: var(--gold); }
+  .packages .section-title { color: var(--cream); }
+  .packages-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; margin-top: 3rem;
+  }
+  .pkg-card {
+    border: 1px solid rgba(196,162,74,0.2);
+    padding: 2.5rem 2rem;
+    position: relative; transition: all 0.3s;
+  }
+  .pkg-card:hover { border-color: var(--gold-muted); background: rgba(255,255,255,0.03); }
+  .pkg-card.featured {
+    border-color: var(--gold);
+    background: rgba(196,162,74,0.06);
+  }
+  .featured-badge {
+    position: absolute; top: -1px; right: 2rem;
+    background: var(--gold); color: var(--charcoal);
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 5px 14px;
+  }
+  .pkg-tier {
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--gold-muted); margin-bottom: 0.5rem;
+  }
+  .pkg-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem; font-weight: 400; color: var(--cream);
+    margin-bottom: 0.5rem;
+  }
+  .pkg-subtitle {
+    font-size: 0.8rem; color: var(--slate-light);
+    margin-bottom: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .pkg-features { list-style: none; }
+  .pkg-features li {
+    font-size: 0.875rem; font-weight: 300; color: rgba(250,246,240,0.75);
+    padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+    display: flex; align-items: flex-start; gap: 8px;
+    line-height: 1.4;
+  }
+  .pkg-features li::before {
+    content: '→'; color: var(--gold); font-size: 0.75rem;
+    flex-shrink: 0; margin-top: 2px;
+  }
+  .pkg-cta {
+    display: block; margin-top: 2rem;
+    background: transparent; color: var(--gold-light);
+    border: 1px solid var(--gold-muted);
+    padding: 12px 20px; text-align: center;
+    font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; text-decoration: none;
+    transition: all 0.2s;
+  }
+  .pkg-cta:hover { background: var(--gold-muted); color: var(--charcoal); }
+  .pkg-card.featured .pkg-cta {
+    background: var(--gold); color: var(--charcoal);
+    border-color: var(--gold);
+  }
+  .pkg-card.featured .pkg-cta:hover { background: var(--gold-light); }
+
+  /* ── FOUNDER ── */
+  .founder { background: var(--cream-dark); }
+  .founder-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 5rem; align-items: center; }
+  .founder-imgs { position: relative; }
+  .founder-portrait {
+    width: 85%; aspect-ratio: 3/4; object-fit: cover; object-position: top;
+    display: block;
+  }
+  .founder-portrait-2 {
+    position: absolute; bottom: -40px; right: 0;
+    width: 45%; aspect-ratio: 1; object-fit: cover; object-position: top;
+    border: 5px solid var(--cream-dark);
+  }
+  .founder-content {}
+  .founder-title {
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--gold-muted);
+    margin-bottom: 0.5rem;
+  }
+  .founder-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 400; color: var(--charcoal); line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+  .founder-content p {
+    font-size: 0.95rem; font-weight: 300; color: var(--slate);
+    line-height: 1.9; margin-bottom: 1rem;
+  }
+  .founder-credentials {
+    display: flex; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap;
+  }
+  .cred {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 0.8rem; color: var(--slate);
+  }
+  .cred-dot { width: 8px; height: 8px; background: var(--terracotta); border-radius: 50%; flex-shrink: 0; }
+  .books-strip {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem;
+  }
+  .book-card {
+    background: var(--white); padding: 1rem; display: flex; gap: 0.75rem;
+    align-items: center; border-left: 3px solid var(--terracotta);
+  }
+  .book-card img { width: 50px; flex-shrink: 0; }
+  .book-card-info h5 { font-size: 0.8rem; font-weight: 500; color: var(--charcoal); line-height: 1.3; }
+  .book-card-info span { font-size: 0.7rem; color: var(--terracotta); font-weight: 500; }
+
+  /* ── IMPACT / BLOG ── */
+  .blog { background: var(--white); }
+  .blog-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; }
+  .blog-link {
+    font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--terracotta);
+    text-decoration: none; border-bottom: 1px solid var(--terracotta);
+    padding-bottom: 2px;
+  }
+  .blog-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 2px; background: var(--terracotta-light); }
+  .blog-card { background: var(--white); overflow: hidden; }
+  .blog-card img {
+    width: 100%; aspect-ratio: 16/10; object-fit: cover;
+    display: block; filter: saturate(0.8); transition: filter 0.3s;
+  }
+  .blog-card:hover img { filter: saturate(1); }
+  .blog-card-body { padding: 1.5rem; }
+  .blog-cat {
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.5rem;
+  }
+  .blog-card-body h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-weight: 400; line-height: 1.3;
+    color: var(--charcoal); margin-bottom: 0.5rem;
+  }
+  .blog-card-body p {
+    font-size: 0.8rem; font-weight: 300; color: var(--slate);
+    line-height: 1.6;
+  }
+  .blog-card-meta {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--cream-dark);
+  }
+  .blog-card-meta span { font-size: 0.7rem; color: var(--slate-light); }
+  .blog-read-more {
+    font-size: 0.7rem; font-weight: 500; color: var(--terracotta);
+    text-decoration: none; letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* ── VALUES ── */
+  .values { background: var(--terracotta); }
+  .values .section-label { color: rgba(250,246,240,0.6); }
+  .values .section-label::before { background: rgba(250,246,240,0.6); }
+  .values .section-title { color: var(--cream); }
+  .values-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 2px; margin-top: 3rem; background: rgba(0,0,0,0.1);
+  }
+  .value-card {
+    background: rgba(250,246,240,0.06); padding: 2.5rem 1.75rem;
+    border-top: 2px solid rgba(196,162,74,0);
+    transition: all 0.3s;
+  }
+  .value-card:hover { background: rgba(250,246,240,0.12); border-color: var(--gold); }
+  .value-icon {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem; font-style: italic; font-weight: 300;
+    color: var(--gold-light); margin-bottom: 1rem;
+  }
+  .value-card h3 { font-size: 1rem; font-weight: 500; color: var(--cream); margin-bottom: 0.5rem; }
+  .value-card p { font-size: 0.85rem; font-weight: 300; color: rgba(250,246,240,0.75); line-height: 1.7; }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: var(--charcoal);
+    padding: 100px 8%; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 1px; height: 60px; background: var(--gold);
+  }
+  .cta-label {
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem;
+  }
+  .cta-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 300; line-height: 1.15; color: var(--cream);
+    max-width: 700px; margin: 0 auto 2rem;
+  }
+  .cta-section h2 em { color: var(--terracotta-light); font-style: italic; }
+  .cta-section p {
+    font-size: 1rem; font-weight: 300; color: var(--slate-light);
+    max-width: 500px; margin: 0 auto 3rem; line-height: 1.8;
+  }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  /* ── CONTACT STRIP ── */
+  .contact-strip {
+    background: var(--cream-dark);
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--terracotta-light);
+  }
+  .contact-item {
+    padding: 3rem 8%;
+    border-right: 1px solid var(--terracotta-light);
+    text-align: center;
+  }
+  .contact-item:last-child { border-right: none; }
+  .contact-item-icon {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem; color: var(--terracotta); margin-bottom: 0.5rem;
+    font-style: italic;
+  }
+  .contact-item h4 {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--slate); margin-bottom: 0.5rem;
+  }
+  .contact-item p { font-size: 0.9rem; color: var(--charcoal); font-weight: 300; }
+  .contact-item a { color: var(--terracotta); text-decoration: none; }
+
+  /* ── FOOTER ── */
+  footer { background: var(--charcoal); padding: 4rem 8% 2rem; }
+  .footer-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem; margin-bottom: 3rem;
+    padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-brand .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 600; color: var(--cream);
+    margin-bottom: 1rem;
+  }
+  .footer-brand .logo span { color: var(--gold); font-style: italic; }
+  .footer-brand p { font-size: 0.85rem; font-weight: 300; color: var(--slate-light); line-height: 1.7; max-width: 280px; }
+  .footer-brand .tagline {
+    font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold-muted); margin-top: 0.75rem;
+  }
+  .footer-col h4 {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--gold-muted);
+    margin-bottom: 1rem;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 0.5rem; }
+  .footer-col ul li a {
+    font-size: 0.85rem; font-weight: 300; color: var(--slate-light);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: var(--cream); }
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-bottom p { font-size: 0.75rem; color: var(--slate-light); }
+  .footer-bottom a { color: var(--terracotta-light); text-decoration: none; }
+  .social-links { display: flex; gap: 1rem; }
+  .social-link {
+    width: 36px; height: 36px;
+    border: 1px solid rgba(255,255,255,0.1);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--slate-light); text-decoration: none; font-size: 0.75rem;
+    transition: all 0.2s; font-weight: 500;
+  }
+  .social-link:hover { border-color: var(--gold); color: var(--gold-light); }
+
+  /* ── NEWSLETTER BAR ── */
+  .newsletter-bar { background: var(--gold-muted); padding: 1.5rem 8%; display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; justify-content: space-between; }
+  .newsletter-bar p { font-size: 0.9rem; font-weight: 500; color: var(--charcoal); }
+  .newsletter-form { display: flex; gap: 0; }
+  .newsletter-form input {
+    padding: 10px 16px; border: none; font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem; background: var(--white); color: var(--charcoal);
+    width: 280px; outline: none;
+  }
+  .newsletter-form button {
+    background: var(--charcoal); color: var(--cream);
+    border: none; padding: 10px 20px; cursor: pointer;
+    font-family: 'Outfit', sans-serif; font-size: 0.75rem;
+    font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+    transition: background 0.2s;
+  }
+  .newsletter-form button:hover { background: var(--terracotta); }
+
+  /* ── BLOG PAGE SECTION ── */
+  .blog-full { background: var(--cream); }
+  .blog-full-grid {
+    display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; margin-top: 3rem;
+  }
+  .blog-post-list { display: flex; flex-direction: column; gap: 2.5rem; }
+  .blog-post-item {
+    display: grid; grid-template-columns: 200px 1fr; gap: 1.5rem;
+    padding-bottom: 2.5rem; border-bottom: 1px solid var(--cream-dark);
+  }
+  .blog-post-item img {
+    width: 100%; aspect-ratio: 4/3; object-fit: cover;
+    filter: saturate(0.8);
+  }
+  .blog-post-body h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 400; line-height: 1.3;
+    color: var(--charcoal); margin-bottom: 0.5rem;
+  }
+  .blog-post-body p {
+    font-size: 0.875rem; font-weight: 300; color: var(--slate);
+    line-height: 1.7; margin-bottom: 0.75rem;
+  }
+  .sidebar { }
+  .sidebar-widget {
+    background: var(--white); padding: 1.75rem; margin-bottom: 2rem;
+  }
+  .sidebar-widget h4 {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--terracotta); margin-bottom: 1rem;
+    padding-bottom: 0.75rem; border-bottom: 1px solid var(--cream-dark);
+  }
+  .sidebar-topic {
+    display: flex; justify-content: space-between;
+    padding: 8px 0; border-bottom: 1px solid var(--cream-dark);
+    font-size: 0.85rem;
+  }
+  .sidebar-topic span:first-child { color: var(--charcoal); font-weight: 300; }
+  .sidebar-topic span:last-child {
+    font-size: 0.7rem; background: var(--cream); color: var(--terracotta);
+    padding: 2px 8px; font-weight: 500;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .about-grid, .founder-grid, .blog-full-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .services-grid, .packages-grid, .values-grid { grid-template-columns: 1fr 1fr; }
+    .blog-grid { grid-template-columns: 1fr; }
+    .contact-strip { grid-template-columns: 1fr; }
+    .contact-item { border-right: none; border-bottom: 1px solid var(--terracotta-light); }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    nav { }
+    .nav-links, .nav-cta { display: none; }
+    .nav-mobile-btn { display: flex; }
+    .about-img-accent { display: none; }
+    .founder-portrait-2 { display: none; }
+    .books-strip { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    section { padding: 60px 5%; }
+    .services-grid, .packages-grid, .values-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .hero-left { padding: 6% 5%; }
+    .blog-post-item { grid-template-columns: 1fr; }
+  }
+
+  /* Animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp 0.7s ease forwards; }
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.2s; }
+  .delay-3 { animation-delay: 0.3s; }
+  .delay-4 { animation-delay: 0.4s; }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-logo">Nura <span>Hub</span> Limited</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#founder">Founder</a></li>
+    <li><a href="#blog">Insights</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Work With Us</a>
+  <button class="nav-mobile-btn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left fade-up">
+    <div class="hero-badge">Nigeria's Premier Gender-Focused Consulting Firm</div>
+    <h1>
+      Empowering<br>
+      <em>Women &amp;</em>
+      <strong>Building Equity</strong>
+    </h1>
+    <p class="hero-tagline">Empowering Systems · Elevating Women · Enabling Equity</p>
+    <p class="hero-desc">
+      We partner with organizations, corporates, NGOs, and government institutions to design, implement, and sustain gender-equitable systems that translate policies into meaningful impact.
+    </p>
+    <div class="hero-actions">
+      <a href="#services" class="btn-primary">Explore Our Work</a>
+      <a href="#packages" class="btn-outline">View Packages</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">5+</div>
+        <div class="stat-label">Service Areas</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Published Books</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">NG</div>
+        <div class="stat-label">Based in Nigeria</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-grid">
+      <img class="main-img" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80" alt="Empowering women">
+      <img class="side-img" src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=400&q=80" alt="Workshop">
+      <img class="side-img" src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&q=80" alt="Leadership">
+    </div>
+    <div class="hero-overlay"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-band" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Gender Mainstreaming</span><span class="dot">◆</span>
+    <span>Inclusive Policy Design</span><span class="dot">◆</span>
+    <span>Postpartum-Friendly Workplaces</span><span class="dot">◆</span>
+    <span>Gender Sensitivity Training</span><span class="dot">◆</span>
+    <span>Research &amp; Advisory</span><span class="dot">◆</span>
+    <span>Strategic Planning</span><span class="dot">◆</span>
+    <span>Women's Empowerment</span><span class="dot">◆</span>
+    <span>Equity &amp; Inclusion</span><span class="dot">◆</span>
+    <span>Gender Mainstreaming</span><span class="dot">◆</span>
+    <span>Inclusive Policy Design</span><span class="dot">◆</span>
+    <span>Postpartum-Friendly Workplaces</span><span class="dot">◆</span>
+    <span>Gender Sensitivity Training</span><span class="dot">◆</span>
+    <span>Research &amp; Advisory</span><span class="dot">◆</span>
+    <span>Strategic Planning</span><span class="dot">◆</span>
+    <span>Women's Empowerment</span><span class="dot">◆</span>
+    <span>Equity &amp; Inclusion</span><span class="dot">◆</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-img-stack">
+      <div class="about-quote-card">
+        <p>"We don't just create policies. We build ecosystems where women thrive."</p>
+        <cite>— Barr. Safiya Hamza Jibrin, Founder</cite>
+      </div>
+      <img class="about-img-main" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=500&q=80" alt="Women empowerment" />
+      <img class="about-img-accent" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=300&q=80" alt="Community" />
+    </div>
+    <div class="about-content">
+      <div class="section-label">Who We Are</div>
+      <h2 class="section-title">Nigeria's Pioneer <em>Gender-Focused</em> Consulting Firm</h2>
+      <p>Nura Hub Limited is dedicated to creating workplaces, organizations, and communities where women thrive. We blend legal expertise, social impact, and gender systems thinking to transform policies into practical, sustainable, and inclusive solutions.</p>
+      <p>We exist to close the gap between policy and practice — enabling organizations to implement gender-responsive strategies, inclusive workplace practices, and postpartum-friendly initiatives that protect, empower, and elevate women.</p>
+      <div class="about-pillars">
+        <div class="pillar">
+          <h4>From Paper to Practice</h4>
+          <p>We bridge the gap between policy creation and organizational reality.</p>
+        </div>
+        <div class="pillar">
+          <h4>Human-Centred Legal Insight</h4>
+          <p>Every framework is rights-based, compliant, and protective.</p>
+        </div>
+        <div class="pillar">
+          <h4>Collaborative Change</h4>
+          <p>We co-create with stakeholders at all levels for sustainability.</p>
+        </div>
+        <div class="pillar">
+          <h4>Do No Harm, Do More Good</h4>
+          <p>Policies prioritize safety, well-being, and fairness.</p>
+        </div>
+      </div>
+      <a href="#services" class="btn-primary" style="margin-top: 1rem;">Our Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-intro">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Gender Equity Solutions That <em>Actually Work</em></h2>
+    <p>We fix what most gender work misses — moving beyond awareness to build lasting, systemic change across five critical service areas.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <h3>Gender Mainstreaming &amp; Equity Integration</h3>
+      <p>We guide organizations to integrate gender equality into all aspects of operations — from leadership to decision-making, service delivery, and culture — ensuring lasting change beyond token gestures.</p>
+      <span class="service-tag">Core Service</span>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <h3>Inclusive Policy Design</h3>
+      <p>Crafting practical, enforceable, and rights-based policies covering gender equity, workplace harassment, flexible working, and postpartum support — tailored to your organization's culture and legal requirements.</p>
+      <span class="service-tag">Policy &amp; Legal</span>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <h3>Postpartum-Friendly Workplaces</h3>
+      <p>Designing frameworks and programs to support women before, during, and after maternity leave — including lactation support, reintegration plans, and wellness initiatives to retain top talent.</p>
+      <span class="service-tag">Workplace Wellness</span>
+    </div>
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <h3>Gender Sensitivity Training &amp; Capacity Building</h3>
+      <p>Custom workshops, seminars, and training programs that equip leaders and teams to identify bias, challenge stereotypes, and foster equitable workplaces where women feel safe and valued.</p>
+      <span class="service-tag">Training</span>
+    </div>
+    <div class="service-card">
+      <div class="service-num">05</div>
+      <h3>Research, Strategy &amp; Advisory</h3>
+      <p>Evidence-based research, participatory assessments, and advisory services that guide organizations and policymakers toward gender-responsive and inclusive decision-making.</p>
+      <span class="service-tag">Research &amp; Advisory</span>
+    </div>
+    <div class="service-card" style="background: var(--terracotta); cursor: default;">
+      <div class="service-num" style="color: rgba(250,246,240,0.3);">→</div>
+      <h3 style="color: var(--cream); font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; font-style: italic;">Ready to transform your organization?</h3>
+      <p style="color: rgba(250,246,240,0.8);">Let's talk about how Nura Hub can design a tailored gender-equity solution for your context.</p>
+      <a href="#contact" class="btn-outline" style="margin-top: 1.5rem; display: inline-block; color: var(--gold-light); border-color: var(--gold-muted);">Get In Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="packages" id="packages">
+  <div class="section-label">Service Packages</div>
+  <h2 class="section-title">Choose Your <em>Transformation</em> Path</h2>
+  <div class="packages-grid">
+    <div class="pkg-card">
+      <div class="pkg-tier">Package 01</div>
+      <div class="pkg-name">Foundation</div>
+      <div class="pkg-subtitle">For small organizations &amp; first-time implementers</div>
+      <ul class="pkg-features">
+        <li>Gender Mainstreaming Workshop (up to 25 participants)</li>
+        <li>Gender Policy Template + Review</li>
+        <li>Advisory Session (2 hours)</li>
+        <li>Gender &amp; Wellbeing Toolkit</li>
+        <li>2 Weeks Email Support</li>
+      </ul>
+      <a href="#contact" class="pkg-cta">Enquire Now</a>
+    </div>
+    <div class="pkg-card featured">
+      <div class="featured-badge">Most Popular</div>
+      <div class="pkg-tier">Package 02</div>
+      <div class="pkg-name">Growth</div>
+      <div class="pkg-subtitle">For mid-sized organizations institutionalizing equity</div>
+      <ul class="pkg-features">
+        <li>Lite Gender &amp; Inclusion Audit</li>
+        <li>Inclusive Leadership Training</li>
+        <li>Gender Strategy Framework</li>
+        <li>M&amp;E Mini-Framework</li>
+        <li>30 Days Email Support</li>
+      </ul>
+      <a href="#contact" class="pkg-cta">Enquire Now</a>
+    </div>
+    <div class="pkg-card">
+      <div class="pkg-tier">Package 03</div>
+      <div class="pkg-name">Transformation</div>
+      <div class="pkg-subtitle">For INGOs, government &amp; large organizations</div>
+      <ul class="pkg-features">
+        <li>Comprehensive Gender Audit</li>
+        <li>Custom Gender Strategy + Action Plan</li>
+        <li>Two Tailored Workshops</li>
+        <li>3-Month Advisory &amp; Monitoring</li>
+        <li>Grant &amp; Proposal Support</li>
+      </ul>
+      <a href="#contact" class="pkg-cta">Enquire Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder" id="founder">
+  <div class="founder-grid">
+    <div class="founder-imgs">
+      <img class="founder-portrait" src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=500&q=80" alt="Barr. Safiya Hamza Jibrin" />
+      <img class="founder-portrait-2" src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=300&q=80" alt="In session" />
+    </div>
+    <div class="founder-content">
+      <div class="founder-title">Meet the Founder</div>
+      <h2 class="founder-name">Barr. Safiya<br>Hamza Jibrin</h2>
+      <p>A legal practitioner, women's life enthusiast, and advocate for women's holistic well-being. Safiya founded Nura Hub Limited to close the gap between policy and practice in gender equity across Nigeria.</p>
+      <p>Her unique blend of legal expertise, social impact strategy, and deep personal commitment to women's empowerment gives Nura Hub a distinctive edge — translating complex gender frameworks into real, measurable organizational change.</p>
+      <div class="founder-credentials">
+        <div class="cred"><div class="cred-dot"></div><span>Legal Practitioner</span></div>
+        <div class="cred"><div class="cred-dot"></div><span>Published Author</span></div>
+        <div class="cred"><div class="cred-dot"></div><span>Gender Systems Thinker</span></div>
+        <div class="cred"><div class="cred-dot"></div><span>Women's Advocate</span></div>
+      </div>
+      <div class="books-strip">
+        <div class="book-card">
+          <div style="width:50px; height:65px; background: var(--charcoal); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <div style="font-family:'Cormorant Garamond',serif; font-size:0.5rem; color:var(--gold-light); text-align:center; padding:4px; font-style:italic; line-height:1.3;">Becoming a Woman in Power</div>
+          </div>
+          <div class="book-card-info">
+            <h5>Becoming a Woman in Power</h5>
+            <span>Available Now</span>
+          </div>
+        </div>
+        <div class="book-card">
+          <div style="width:50px; height:65px; background: linear-gradient(135deg, #D4A0C0, #E8B4D4); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <div style="font-family:'Cormorant Garamond',serif; font-size:0.45rem; color:#4B1528; text-align:center; padding:4px; font-weight:600; line-height:1.3;">Mummy! I Think I am Beautiful</div>
+          </div>
+          <div class="book-card-info">
+            <h5>Mummy! I Think I am Beautiful</h5>
+            <span>Available on Amazon</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG / INSIGHTS -->
+<section class="blog" id="blog">
+  <div class="blog-header">
+    <div>
+      <div class="section-label">Latest Insights</div>
+      <h2 class="section-title">From the <em>Nura Hub</em> Journal</h2>
+    </div>
+    <a href="#blog-full" class="blog-link">View All Articles →</a>
+  </div>
+  <div class="blog-grid">
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=700&q=80" alt="Leadership" />
+      <div class="blog-card-body">
+        <div class="blog-cat">Gender &amp; Leadership</div>
+        <h3>Why Postpartum Support Is the Next Frontier in Workplace Inclusion</h3>
+        <p>Most organizations stop at maternity leave policy. Here's why the real work begins at return — and how to design it right.</p>
+        <div class="blog-card-meta">
+          <span>Nura Hub Editorial · April 2025</span>
+          <a href="#" class="blog-read-more">Read →</a>
+        </div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400&q=80" alt="Policy" />
+      <div class="blog-card-body">
+        <div class="blog-cat">Policy &amp; Practice</div>
+        <h3>From Policy Paper to Organizational Reality: The Implementation Gap</h3>
+        <p>Gender policies exist. Why don't they work? We explore the five blockers and how to dismantle them.</p>
+        <div class="blog-card-meta">
+          <span>March 2025</span>
+          <a href="#" class="blog-read-more">Read →</a>
+        </div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&q=80" alt="Training" />
+      <div class="blog-card-body">
+        <div class="blog-cat">Capacity Building</div>
+        <h3>What Real Gender Sensitivity Training Looks Like in Nigerian Organisations</h3>
+        <p>Checkbox workshops don't create change. Evidence-based approaches that actually shift culture.</p>
+        <div class="blog-card-meta">
+          <span>February 2025</span>
+          <a href="#" class="blog-read-more">Read →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="newsletter-bar">
+  <p>Stay ahead of gender equity trends — join our newsletter.</p>
+  <div class="newsletter-form">
+    <input type="email" placeholder="Your email address" />
+    <button type="button">Subscribe</button>
+  </div>
+</div>
+
+<!-- VALUES -->
+<section class="values">
+  <div class="section-label">Our Values</div>
+  <h2 class="section-title">What We Stand <em>For</em></h2>
+  <div class="values-grid">
+    <div class="value-card">
+      <div class="value-icon">Eq.</div>
+      <h3>Equity First</h3>
+      <p>Empowerment begins with fairness and inclusion — for every woman, in every organisation.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">Int.</div>
+      <h3>Integrity &amp; Accountability</h3>
+      <p>Ethical leadership in every initiative, every engagement, every outcome we deliver.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">Em.</div>
+      <h3>Empathy-Driven Innovation</h3>
+      <p>Designing solutions that humanize policy — because behind every framework is a woman's life.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">Tr.</div>
+      <h3>Transformation, Not Tokenism</h3>
+      <p>Moving beyond awareness to build lasting, systemic change that outlives our presence.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-label">Let's Build Something Meaningful</div>
+  <h2>Ready to Make Your Organisation <em>Truly Inclusive?</em></h2>
+  <p>Whether you're an NGO, corporate, or government institution — we have a package and approach designed for where you are and where you want to go.</p>
+  <div class="cta-buttons">
+    <a href="mailto:info@nurahublimited.com" class="btn-primary">Start the Conversation</a>
+    <a href="#packages" class="btn-outline">Browse Packages</a>
+  </div>
+</section>
+
+<!-- CONTACT STRIP -->
+<div class="contact-strip">
+  <div class="contact-item">
+    <div class="contact-item-icon">✉</div>
+    <h4>Email Us</h4>
+    <p><a href="mailto:info@nurahublimited.com">info@nurahublimited.com</a></p>
+  </div>
+  <div class="contact-item">
+    <div class="contact-item-icon">☏</div>
+    <h4>Call Us</h4>
+    <p><a href="tel:+234">+234 — Nigeria</a></p>
+  </div>
+  <div class="contact-item">
+    <div class="contact-item-icon">◉</div>
+    <h4>Follow Us</h4>
+    <p><a href="#">@nurahublimited</a></p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">Nura <span>Hub</span> Limited</div>
+      <p>A pioneering gender-focused consulting firm in Nigeria, dedicated to creating workplaces, organizations, and communities where women thrive.</p>
+      <div class="tagline">Empowering Systems · Elevating Women · Enabling Equity</div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Gender Mainstreaming</a></li>
+        <li><a href="#services">Inclusive Policy Design</a></li>
+        <li><a href="#services">Postpartum Workplaces</a></li>
+        <li><a href="#services">Training &amp; Capacity</a></li>
+        <li><a href="#services">Research &amp; Advisory</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Packages</h4>
+      <ul>
+        <li><a href="#packages">Foundation Package</a></li>
+        <li><a href="#packages">Growth Package</a></li>
+        <li><a href="#packages">Transformation Package</a></li>
+        <li><a href="#packages">Strategic Planning</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#founder">The Founder</a></li>
+        <li><a href="#blog">Insights Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#">Publications</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Nura Hub Limited. All rights reserved. | Empowering Women Across Nigeria</p>
+    <div class="social-links">
+      <a href="#" class="social-link" aria-label="Instagram">IG</a>
+      <a href="#" class="social-link" aria-label="LinkedIn">LI</a>
+      <a href="#" class="social-link" aria-label="Twitter">X</a>
+      <a href="#" class="social-link" aria-label="Facebook">FB</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const mobileBtn = document.querySelector('.nav-mobile-btn');
+  const navLinks = document.querySelector('.nav-links');
+  if (mobileBtn) {
+    mobileBtn.addEventListener('click', () => {
+      const isOpen = navLinks.style.display === 'flex';
+      navLinks.style.display = isOpen ? 'none' : 'flex';
+      navLinks.style.flexDirection = 'column';
+      navLinks.style.position = 'absolute';
+      navLinks.style.top = '70px';
+      navLinks.style.left = '0';
+      navLinks.style.right = '0';
+      navLinks.style.background = 'var(--cream)';
+      navLinks.style.padding = '1rem 5%';
+      navLinks.style.borderBottom = '1px solid var(--terracotta-light)';
+    });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.service-card, .pkg-card, .blog-card, .value-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
